@@ -26,12 +26,12 @@ class App extends Component {
            <Route
             exact
             path="/"
-            render={(props) => <Login {...props} getUser={this.getTheUser} />}
+            render={(props) => <Login {...props} getUser={this.getTheUser} hasUser={true}/>}
             />
           <Route
             exact
             path="/signup"
-            render={(props) => <Signup {...props} getUser={this.getTheUser} />}
+            render={(props) => <Signup {...props} getUser={this.getTheUser} hasUser={false} />}
             />
           <CreateHabit user={this.state.user}></CreateHabit>  
         </Switch>
