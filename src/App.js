@@ -1,18 +1,40 @@
 import { Component } from 'react';
 import './App.css';
 import CreateHabit from './components/CreateHabit';
+import { Switch, Route } from 'react-router-dom';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
 
 class App extends Component {
 
   state = {
     isLoggedIn: false,
-    user: {_id: '6127625a931894278bd10db8'}
+    user: null
   }
+
+  getTheUser = (userObj, loggedIn) => {
+    this.setState({
+      user: userObj,
+      isLoggedIn: loggedIn
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <CreateHabit user={this.state.user}></CreateHabit>
+        <Switch>
+           <Route
+            exact
+            path="/"
+            render={(props) => <Login {...props} getUser={this.getTheUser} />}
+            />
+          <Route
+            exact
+            path="/signup"
+            render={(props) => <Signup {...props} getUser={this.getTheUser} />}
+            />
+          <CreateHabit user={this.state.user}></CreateHabit>  
+        </Switch>
       </div>
     );
   }
