@@ -2,11 +2,9 @@
 import React, { Component } from 'react';
 import authService from '../../services/auth/auth-service';
 import '../../Index.css';
-import LoginButton from './LoginButton';
-import Signup from './Signup';
 
 class Login extends Component {
-  state = { username: '', password: '', isSignup: false };
+  state = { username: '', password: '', isSignup:false };
 
   constructor(props) {
     super(props);
@@ -52,6 +50,14 @@ class Login extends Component {
     return <button type="submit" className="signup-btn"> Signup </button>
   }
 
+  getTitle() {
+    const isSignup = this.state.isSignup;
+    if (!isSignup) {
+        return <h4 type="submit" className="signup-btn"> Login </h4>
+    }
+      return <h4 className="card-title"> Signup </h4>
+  }
+
   changeToSignup() {
     this.setState({
         isSignup: true
@@ -77,7 +83,8 @@ class Login extends Component {
           <div className="card card-login">
             <form className="form" onSubmit={this.handleFormSubmit}>
               <div className="card-header card-header-primary text-center">
-                <h4 className="card-title">Login</h4>
+
+                {this.getTitle()}
               </div>
               <div className="card-body">
             
@@ -107,8 +114,9 @@ class Login extends Component {
                     </div>
                     <div className="footer text-center">
                         {this.hasUser()}
-                        <br />
-                        Don't have a user <button onClick={this.changeToSignup}>Change to Signup</button>
+                        <div className="signup">
+                             Don't have a user <button onClick={this.changeToSignup}>Change to Signup</button>
+                        </div>
                     </div>
             </form>
           </div>
