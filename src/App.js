@@ -5,7 +5,6 @@ import CreateHabit from './components/CreateHabit';
 import HabitList from './components/HabitList'
 import { Switch, Route } from 'react-router-dom';
 import Login from './components/auth/Login';
-import Signup from './components/auth/Signup';
 
 class App extends Component {
 
@@ -32,12 +31,12 @@ class App extends Component {
            <Route
             exact
             path="/"
-            render={(props) => <Login {...props} getUser={this.getTheUser} />}
+            render={(props) => <Login {...props} getUser={this.getTheUser} isSignup={false}/>}
             />
           <Route
             exact
             path="/signup"
-            render={(props) => <Signup {...props} getUser={this.getTheUser} />}
+            render={(props) => <Login {...props} getUser={this.getTheUser} isSignup={true} />}
             />
         </Switch>
       </div>

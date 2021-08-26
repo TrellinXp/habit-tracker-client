@@ -1,30 +1,68 @@
 
 import React, { Component } from 'react';
 import authService from '../../services/auth/auth-service';
- 
+import '../../Index.css';
+
 class Login extends Component {
-  state = { username: '', password: '' };
+  state = { username: '', password: '', isSignup:false };
+
+  constructor(props) {
+    super(props);
+    // This binding is necessary to make `this` work in the callback
+    this.changeToSignup = this.changeToSignup.bind(this);
+  }
  
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
  
-    authService
-      .login(username, password)
-      .then(response => {
-        this.setState({ username: '', password: '' });
-        this.props.getUser(response, true);
-        
-        this.props.history.push("/habits");
-      })
-      .catch(error => console.log(error));
-
+    if(this.state.isSignup) {
+        authService
+        .signup(username, password)
+        .then(response => {
+          this.setState({ username: '', password: '' });
+          this.props.getUser(response, true);          
+          this.props.history.push("/habits");
+        })
+        .catch(error => console.log(error));
+    } else {
+        authService
+        .login(username, password)
+        .then(response => {
+          this.setState({ username: '', password: '' });
+          this.props.getUser(response, true);          
+          this.props.history.push("/habits");
+        })
+        .catch(error => console.log(error));
+    }
   };
  
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+
+  hasUser() {
+    const isSignup = this.state.isSignup;
+    if (!isSignup) {
+        return <button type="submit" className="signup-btn"> Login </button>
+    }
+    return <button type="submit" className="signup-btn"> Signup </button>
+  }
+
+  getTitle() {
+    const isSignup = this.state.isSignup;
+    if (!isSignup) {
+        return <h4 type="submit" className="signup-btn"> Login </h4>
+    }
+      return <h4 className="card-title"> Signup </h4>
+  }
+
+  changeToSignup() {
+    this.setState({
+        isSignup: true
+    })
+  }
  
   render() {
     return (<div>
@@ -45,7 +83,8 @@ class Login extends Component {
           <div className="card card-login">
             <form className="form" onSubmit={this.handleFormSubmit}>
               <div className="card-header card-header-primary text-center">
-                <h4 className="card-title">Login</h4>
+
+                {this.getTitle()}
               </div>
               <div className="card-body">
             
@@ -66,13 +105,18 @@ class Login extends Component {
                             </span>
                         </div>
                         <input  type="password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange} className="form-control" placeholder="Password..." />
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.handleChange} 
+                                className="form-control"
+                                placeholder="Password..." />
                         </div>
                     </div>
                     <div className="footer text-center">
-                        <button type="submit" className="signup-btn"> Login </button>
+                        {this.hasUser()}
+                        <div className="signup">
+                             Don't have a user <button onClick={this.changeToSignup}>Change to Signup</button>
+                        </div>
                     </div>
             </form>
           </div>
