@@ -1,6 +1,8 @@
-import { Component } from 'react';
+import {Component} from 'react'
 import './App.css';
 import CreateHabit from './components/CreateHabit';
+import HabitList from './components/HabitList'
+import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
 
@@ -12,7 +14,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CreateHabit user={this.state.user}></CreateHabit>
+        <h1> Welcome to habit Tracker</h1>
+        <Switch> 
+        <Route exact path="/habits" render={() => <HabitList userIsLoggedIn={this.state.isLoggedIn} />} />
+        <Route exact path="/habits" render={() => <CreateHabit user={this.state.user} />} />
+        </Switch>
       </div>
     );
   }
