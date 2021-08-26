@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import './App.css';
+import Navbar from './components/navbar/Navbar'
 import CreateHabit from './components/CreateHabit';
 import HabitList from './components/HabitList'
 import { Switch, Route } from 'react-router-dom';
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1> Welcome to habit Tracker</h1>
+        <Navbar userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn} getUser={this.getTheUser} />
         <Switch> 
         <Route exact path="/habits" render={() => <HabitList userIsLoggedIn={this.state.isLoggedIn} />} />
         <Route exact path="/habits" render={() => <CreateHabit user={this.state.user} />} />
