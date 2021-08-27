@@ -8,6 +8,7 @@ import { Switch, Route } from 'react-router-dom';
 import Login from './components/auth/Login';
 import HabitDetails from './components/HabitDetails';
 import EditHabit from './components/EditHabit';
+import Calendar from './components/calendar/Calendar';
 
 class App extends Component {
 
@@ -45,6 +46,13 @@ class App extends Component {
             path="/signup"
             render={(props) => <Login {...props} getUser={this.getTheUser} isSignup={true} />}
           />
+
+          <Route
+            exact
+            path="/calendar"
+            render={(props) => <Calendar {...props} />}
+          />
+
           <Route
             exact
             path="/"
