@@ -1,17 +1,17 @@
 .goodHabits {
     background-color: green;
-    height: 40vh;
+    height: 35vh;
 }
 
 .badHabits {
     background-color: orange;
-    height: 40vh;
+    height: 35vh;
 }
 
 .week {
     display: flex;
     flex-direction: row-reverse;
-    height: 90%;
+    height: 100%;
 }
 
 .week-day {
@@ -39,6 +39,7 @@
 
 .create-btn { 
     background-color: royalblue;
-    height: 20%;
-    width: 20%;
+    height: 80%;
+    width: 80%;
+    margin: 5%;
 }

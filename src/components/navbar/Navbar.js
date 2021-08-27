@@ -14,8 +14,8 @@ class Navbar extends React.Component {
     renderAuthLinks() {
         return (
           <>
-            <li><Link to="/signup">Register</Link></li>
-            <li><Link to="/">Login</Link></li>
+            <li className="navigation-item"><Link to="/signup">Register</Link></li>
+            <li className="navigation-item"><Link to="/">Login</Link></li>
           </>
         );
       }
@@ -23,7 +23,7 @@ class Navbar extends React.Component {
 
     renderLogoutLink() {
         return (
-          <li>
+          <li className="navigation-item">
             <Link to="/">
               <button onClick={() => this.logoutUser()}>Logout</button>
             </Link>
@@ -36,8 +36,8 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar">
                 {this.props.userIsLoggedIn && `Hello ${this.props.userData.username}`}
-                <ul>
-                    <li><Link to="/habits">List of Habits</Link></li>
+                <ul className="navigation">
+                    <li className="navigation-item"><Link to="/habits">List of Habits</Link></li>
                     {this.props.userIsLoggedIn
                         ? this.renderLogoutLink()
                         : this.renderAuthLinks()

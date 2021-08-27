@@ -24,6 +24,7 @@ code {
 html {
   position: relative;
   min-height: 90%;
+  background-color: white !important;
 }
 
 .footer {
@@ -64,4 +65,14 @@ html {
 
 .login-button {
   margin-top: 7%;
+}
+.navigation {
+  display: flex;
+  height: 2vh;
+
+}
+
+.navigation-item {
+  width: 20vw;
+  color:grey;
 }
