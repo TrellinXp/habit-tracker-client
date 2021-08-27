@@ -3,14 +3,25 @@ import axios from 'axios';
 
 
 class EditHabit extends Component {
-    state = {
-        title: this.props.theHabit.title,
-        description: this.props.theHabit.description,
-        amount: this.props.theHabit.amount,
-        unit: this.props.theHabit.unit,
-        date: this.props.theHabit.date,
-        
-        goodHabit: this.props.theHabit.goodHabit
+    state = {}
+
+    componentDidMount() {
+        this.getSingleHabit();
+    }
+
+    //GET SPECIFIC 
+    getSingleHabit = () => {
+        const { params } = this.props.match;// to make a query to an specific point using react
+        this.setState({habitsId: params.habitsId});
+        axios.get(`http://localhost:5000/api/habits/${params.habitsId}`, { withCredentials: true })
+            .then(responseFromApi => {
+                const theHabit = responseFromApi.data;
+                this.setState(theHabit);
+            })
+
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
     handleFormSubmit = (event) => {
@@ -28,10 +39,10 @@ class EditHabit extends Component {
 
         event.preventDefault();
 
-        axios.put(`http://localhost:5000/api/habits/${this.props.theHabit._id}`, { title, description, amount, unit, goodHabit, date }, { withCredentials: true })
+        axios.put(`http://localhost:5000/api/habits/${this.state.habitsId}`, { title, description, amount, unit, goodHabit, date }, { withCredentials: true })
         .then(() => {
           // Use the passed down api call to render the updated project data
-          this.props.getTheHabit();
+          console.log("Habbit Edited");
         })
         .catch(error => console.log(error))
     }

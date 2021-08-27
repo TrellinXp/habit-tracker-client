@@ -7,6 +7,7 @@ import HabitList from './components/HabitList'
 import { Switch, Route } from 'react-router-dom';
 import Login from './components/auth/Login';
 import HabitDetails from './components/HabitDetails';
+import EditHabit from './components/EditHabit';
 
 class App extends Component {
 
@@ -54,6 +55,12 @@ class App extends Component {
             path="/habits/:habitsId"
             render={(props) => <HabitDetails {...props} />}
           />
+
+         <Route
+            exact
+            path="/habits/edit/:habitsId"
+            render={(props) => <EditHabit {...props} />}
+          /> 
 
         </Switch>
       </div>
