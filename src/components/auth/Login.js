@@ -9,7 +9,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     // This binding is necessary to make `this` work in the callback
-    this.changeToSignup = this.changeToSignup.bind(this);
+    this.changeToSignup = this.changeMode.bind(this);
   }
  
   handleFormSubmit = event => {
@@ -53,17 +53,23 @@ class Login extends Component {
   getTitle() {
     const isSignup = this.state.isSignup;
     if (!isSignup) {
-        return <h4 type="submit" className="signup-btn"> Login </h4>
+        return <h4> Login </h4>
     }
-      return <h4 className="card-title"> Signup </h4>
+      return <h4> Signup </h4>
   }
 
-  changeToSignup() {
-    this.setState({
-        isSignup: true
-    })
+  changeMode = () => {
+    this.state.isSignup ? this.setState({isSignup: false}) : this.setState({isSignup: true});
   }
- 
+
+  getModeText() {
+    if(!this.state.isSignup) {
+      return "Change to Signup";
+    } else {
+      return "Change to Login";
+    };
+  }
+
   render() {
     return (<div>
     <nav className="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
@@ -76,14 +82,13 @@ class Login extends Component {
       </div>
     </div>
   </nav>
-  <div className="page-header header-filter" >
+  <div className="page-header header-filter login-background">
     <div className="container">
       <div className="row">
         <div className="col-lg-4 col-md-6 ml-auto mr-auto">
           <div className="card card-login">
             <form className="form" onSubmit={this.handleFormSubmit}>
               <div className="card-header card-header-primary text-center">
-
                 {this.getTitle()}
               </div>
               <div className="card-body">
@@ -112,13 +117,16 @@ class Login extends Component {
                                 placeholder="Password..." />
                         </div>
                     </div>
-                    <div className="footer text-center">
-                        {this.hasUser()}
-                        <div className="signup">
-                             Don't have a user <button onClick={this.changeToSignup}>Change to Signup</button>
-                        </div>
+                    <div className="login-button">
+                      {this.hasUser()}
                     </div>
             </form>
+            <div className="text-center">
+                        
+                        <div className="signup">
+                             Don't have a user <button onClick={this.changeMode} class="signup-btn">{this.getModeText()}</button>
+                        </div>
+            </div>
           </div>
         </div>
       </div>
@@ -151,9 +159,7 @@ class Login extends Component {
         </nav>
         <div className="copyright float-right">
           &copy;
-          <script>
-            document.write(new Date().getFullYear())
-          </script>, made with <i className="material-icons">favorite</i> by
+            {new Date().getFullYear()}, made with <i className="material-icons">favorite</i> by
           <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a> for a better web.
         </div>
       </div>

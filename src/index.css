@@ -12,10 +12,56 @@ code {
     monospace;
 }
 
-.footer {
-  height: 10vh;
-}
-
 .signup {
   margin-top: 2vh;
+  font-size: 16px;
+  width: 95%;
+  margin-left: 1vw;
+  text-align: left;
+  margin-bottom: 3vh;
+}
+
+html {
+  position: relative;
+  min-height: 90%;
+}
+
+.footer {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  color: white !important;
+}
+
+.footer a {
+  color: white;
+}
+
+.card-login .form {
+  min-height: 240px !important;
+  max-height: 150px;
+}
+
+.page-header {
+  height: 83vh !important;
+}
+
+.signup-btn {
+  background-color: white;
+  color: #8628a8;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.login-background {
+  background-image: url('./bg7.jpg');
+  background-size: cover; 
+  background-position: top center;
+}
+
+.login-button {
+  margin-top: 7%;
 }
