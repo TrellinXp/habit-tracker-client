@@ -30,8 +30,7 @@ class App extends Component {
           <Route exact path="/habits" render={() => {
             return(
               <>
-            <CreateHabit user={this.state.user} />
-            <HabitList userIsLoggedIn={this.state.isLoggedIn} />
+              <HabitList userIsLoggedIn={this.state.isLoggedIn} />
             </>
             )
           }
