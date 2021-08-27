@@ -15,7 +15,7 @@ class Navbar extends React.Component {
         return (
           <>
             <li className="navigation-item"><Link to="/signup">Register</Link></li>
-            <li className="navigation-item"><Link to="/">Login</Link></li>
+            <li className="navigation-item"><Link to="/">Login</Link></li>         
           </>
         );
       }
@@ -29,15 +29,34 @@ class Navbar extends React.Component {
             </Link>
           </li>
         )
-      }
+    }
+
+    renderCreateHabit() {
+      return (
+        <>
+          <li className="navigation-item"><Link to="/createHabit">Create Habit</Link></li>
+        </>
+      );
+    }
+
+    renderCalendar() {
+      return (
+        <>
+          <li className="navigation-item"><Link to="/calendar">Calendar</Link></li>
+        </>
+      );
+    }
+
 
 
     render() {
         return (
             <nav className="navbar">
-                {this.props.userIsLoggedIn && `Hello ${this.props.userData.username}`}
+                <div className="username">{this.props.userIsLoggedIn && `Hello ${this.props.userData.username}`}</div>
                 <ul className="navigation">
-                    <li className="navigation-item"><Link to="/habits">List of Habits</Link></li>
+                    {/* <li className="navigation-item"><Link to="/habits">List of Habits</Link></li> */}
+                    {this.renderCalendar()}
+                    {this.renderCreateHabit()}
                     {this.props.userIsLoggedIn
                         ? this.renderLogoutLink()
                         : this.renderAuthLinks()

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import EditHabit from './EditHabit'
 
 class HabitDetails extends Component {
     state = {}
@@ -39,7 +38,6 @@ class HabitDetails extends Component {
     }
 
     getDateString = () => {
-        let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(this.state.date).toLocaleDateString("en-US");
     }
 

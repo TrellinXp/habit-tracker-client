@@ -24,11 +24,10 @@ code {
 html {
   position: relative;
   min-height: 90%;
-  background-color: white !important;
 }
 
 .footer {
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -46,12 +45,12 @@ html {
 }
 
 .page-header {
-  height: 83vh !important;
+  height: 87vh !important;
 }
 
 .signup-btn {
   background-color: white;
-  color: #8628a8;
+  color: #d400ff;
   border: none;
   font-weight: bold;
   font-size: 20px;
@@ -69,10 +68,26 @@ html {
 .navigation {
   display: flex;
   height: 2vh;
+  margin: 0;
+  font-weight: bold;
+  width: 87vw;
+}
 
+.navigation a {
+  color: #d400ff;
 }
 
 .navigation-item {
   width: 20vw;
-  color:grey;
+  color:transparent;
+}
+
+.navbar {
+  margin-bottom: 0px !important
+}
+
+.username {
+  margin-left: 3vw;
+  font-weight: bold;
+  font-size: 20px;
 }

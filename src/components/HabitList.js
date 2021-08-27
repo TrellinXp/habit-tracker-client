@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import CreateHabit from './CreateHabit'
 import { Link } from 'react-router-dom';
-
 
 class HabitList extends Component {
     state = { listOfHabits: [] } //L ist of habits is an empty array

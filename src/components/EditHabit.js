@@ -31,7 +31,7 @@ class EditHabit extends Component {
         const unit = this.state.unit;
 
         let goodHabit = false;
-        if(this.state.goodHabit == 'on') {
+        if(this.state.goodHabit === 'on') {
            goodHabit = true;
         }
         const date = Date.now();

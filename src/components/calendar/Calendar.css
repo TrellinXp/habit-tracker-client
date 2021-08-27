@@ -1,24 +1,26 @@
 .goodHabits {
     background-color: green;
-    height: 35vh;
+    height: 39vh;
+    margin-bottom: 4vh;
 }
 
 .badHabits {
     background-color: orange;
-    height: 35vh;
+    height: 39vh;
+    margin-bottom: 4vh;
 }
 
 .week {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     height: 100%;
 }
 
 .week-day {
     width: 15%;
-    height: 90%;
+    height: 83%;
     border: 2px solid gray;
-    margin: 2px;
+    margin: 6px;
 }
 
 .week-header {
@@ -39,7 +41,26 @@
 
 .create-btn { 
     background-color: royalblue;
-    height: 80%;
-    width: 80%;
-    margin: 5%;
+    height: 4vh;
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.habit-calendar {
+    background-color: teal;
+    z-index: 3;
+    height: 3vh;
+    width: 3vw;
+}
+
+.habits {
+    display: flex;
+    flex-direction: column;
+}
+
+.habit-tile { 
+    background-color: tomato;
+    height: 4vh;
+    padding: 0.25vh;
+    margin-top: 1vh;
 }
