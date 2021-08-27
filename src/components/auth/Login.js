@@ -117,13 +117,16 @@ class Login extends Component {
                                 placeholder="Password..." />
                         </div>
                     </div>
-                    <div className="text-center">
-                        {this.hasUser()}
+                    <div className="login-button">
+                      {this.hasUser()}
+                    </div>
+            </form>
+            <div className="text-center">
+                        
                         <div className="signup">
                              Don't have a user <button onClick={this.changeMode} class="signup-btn">{this.getModeText()}</button>
                         </div>
-                    </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
