@@ -124,7 +124,7 @@ class Login extends Component {
             <div className="text-center">
                         
                         <div className="signup">
-                             Don't have a user <button onClick={this.changeMode} class="signup-btn">{this.getModeText()}</button>
+                             Don't have a user <button onClick={this.changeMode} className="signup-btn">{this.getModeText()}</button>
                         </div>
             </div>
           </div>
@@ -160,7 +160,7 @@ class Login extends Component {
         <div className="copyright float-right">
           &copy;
             {new Date().getFullYear()}, made with <i className="material-icons">favorite</i> by
-          <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a> for a better web.
+            <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a> for a better web.
         </div>
       </div>
     </footer>
