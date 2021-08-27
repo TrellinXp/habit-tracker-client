@@ -6,11 +6,11 @@ class EditHabit extends Component {
     state = {
         title: this.props.theHabit.title,
         description: this.props.theHabit.description,
-        amount = this.props.theHabit.amount,
-        unit = this.props.theHabit.unit,
-        date = this.props.theHabit.date,
-        user = this.props.theHabit.user._id,
-        goodHabit = this.props.theHabit.goodHabit
+        amount: this.props.theHabit.amount,
+        unit: this.props.theHabit.unit,
+        date: this.props.theHabit.date,
+        
+        goodHabit: this.props.theHabit.goodHabit
     }
 
     handleFormSubmit = (event) => {
@@ -25,12 +25,10 @@ class EditHabit extends Component {
         }
         const date = Date.now();
 
-        const user = this.props.user._id; 
-
 
         event.preventDefault();
 
-        axios.put(`http://localhost:5000/api/habits/${this.props.theHabit._id}`, { title, description, amount, unit, goodHabit, date, user }, { withCredentials: true })
+        axios.put(`http://localhost:5000/api/habits/${this.props.theHabit._id}`, { title, description, amount, unit, goodHabit, date }, { withCredentials: true })
         .then(() => {
           // Use the passed down api call to render the updated project data
           this.props.getTheHabit();
@@ -51,6 +49,7 @@ class EditHabit extends Component {
                 <hr />
                 <h3>Edit Habit</h3>
                 <form onSubmit={this.handleFormSubmit}>
+                    
                     <label>Title:</label>
                     <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChangeHabit(e)}/>
                     <label>Description:</label>

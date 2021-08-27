@@ -6,6 +6,7 @@ import CreateHabit from './components/CreateHabit';
 import HabitList from './components/HabitList'
 import { Switch, Route } from 'react-router-dom';
 import Login from './components/auth/Login';
+import HabitDetails from './components/HabitDetails';
 
 class App extends Component {
 
@@ -31,10 +32,18 @@ class App extends Component {
             return(
               <>
               <HabitList userIsLoggedIn={this.state.isLoggedIn} />
+              {this.state.isLoggedIn
+                        ? <CreateHabit user={this.state.user} getData={() => this.getAllHabits()} />
+                        : <p>Please Login to create a new habit</p>}
             </>
             )
           }
           }/>
+          <Route
+            exact
+            path="/signup"
+            render={(props) => <Login {...props} getUser={this.getTheUser} isSignup={true} />}
+          />
           <Route
             exact
             path="/"
@@ -42,9 +51,10 @@ class App extends Component {
           />
           <Route
             exact
-            path="/signup"
-            render={(props) => <Login {...props} getUser={this.getTheUser} isSignup={true} />}
+            path="/habits/:habitsId"
+            render={(props) => <HabitDetails {...props} />}
           />
+
         </Switch>
       </div>
     );

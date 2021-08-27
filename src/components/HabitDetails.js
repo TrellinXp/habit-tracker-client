@@ -7,15 +7,17 @@ class HabitDetails extends Component {
     state = {}
 
     componentDidMount() {
-        this.getSingleProject();
+        this.getSingleHabit();
     }
 
     //GET SPECIFIC 
     getSingleHabit = () => {
         const { params } = this.props.match;// to make a query to an specific point using react
+        console.log(JSON.stringify(`${params}`))
         axios.get(`http://localhost:5000/api/habits/${params.id}`, { withCredentials: true })
             .then(responseFromApi => {
-                const theProject = responseFromApi.data;
+                const theHabit = responseFromApi.data;
+                console.log('HABIT:', theHabit);
                 this.setState(theHabit);
             })
 
@@ -37,30 +39,26 @@ class HabitDetails extends Component {
     }
 
     render() {
-        const isHabitOwner = this.state.owner === this.props.userData?._id
-
+       
         return (
             <div>
-                <h1>{this.state.title}</h1>
+                <h1>Habit Details</h1>
+                <h3>{this.state.title}</h3>
                 <p>{this.state.description}</p>
                 <p>{this.state.amount}</p>
                 <p>{this.state.unit}</p>
                 <p>{this.state.goodHabit}</p>
-                <p>{this.state.DateNow()}</p>
+                <p>{this.state.date}</p>
 
-                {
-                    this.state.title &&
-                    isHabitOwner &&
-                    <EditProject theHabit={this.state} getTheHabit={this.getSingleHabit} />
-                }
+                
+                    
+                 <EditHabit theHabit={this.state} getTheHabit={this.getSingleHabit} />
+                
                 {/* passing the info of the last state of the form before is updated */}
 
-
-
-                {
-                    isHabitOwner &&
-                    <p><button onClick={this.deleteHabit}>Delete habit</button>  </p>
-                }
+                    
+                <p><button onClick={this.deleteHabit}>Delete habit</button>  </p>
+                
 
                 {/* delete button included in the details form, method for it up as well */}
 

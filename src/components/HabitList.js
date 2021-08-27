@@ -34,9 +34,6 @@ class HabitList extends Component {
                     })
                     }
                 
-                    {this.props.userIsLoggedIn
-                        ? <CreateHabit getData={() => this.getAllHabits()} />
-                        : <p>Please Login to create a new habit</p>}
             </div>
         )
     }
