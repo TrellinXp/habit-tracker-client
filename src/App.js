@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import './App.css';
+import "./material-kit.css?v=2.0.7";
 import Navbar from './components/navbar/Navbar'
 import CreateHabit from './components/CreateHabit';
 import HabitList from './components/HabitList'

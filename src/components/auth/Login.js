@@ -53,7 +53,7 @@ class Login extends Component {
   getTitle() {
     const isSignup = this.state.isSignup;
     if (!isSignup) {
-        return <h4 type="submit" className="signup-btn"> Login </h4>
+        return <h4 type="submit"> Login </h4>
     }
       return <h4 className="card-title"> Signup </h4>
   }
@@ -76,7 +76,7 @@ class Login extends Component {
       </div>
     </div>
   </nav>
-  <div className="page-header header-filter" >
+  <div className="page-header header-filter login-background">
     <div className="container">
       <div className="row">
         <div className="col-lg-4 col-md-6 ml-auto mr-auto">
@@ -112,10 +112,10 @@ class Login extends Component {
                                 placeholder="Password..." />
                         </div>
                     </div>
-                    <div className="footer text-center">
+                    <div className="text-center">
                         {this.hasUser()}
                         <div className="signup">
-                             Don't have a user <button onClick={this.changeToSignup}>Change to Signup</button>
+                             Don't have a user <button onClick={this.changeToSignup} class="signup-btn">Change to Signup</button>
                         </div>
                     </div>
             </form>
@@ -151,9 +151,7 @@ class Login extends Component {
         </nav>
         <div className="copyright float-right">
           &copy;
-          <script>
-            document.write(new Date().getFullYear())
-          </script>, made with <i className="material-icons">favorite</i> by
+            {new Date().getFullYear()}, made with <i className="material-icons">favorite</i> by
           <a href="https://www.creative-tim.com/" target="_blank">Creative Tim</a> for a better web.
         </div>
       </div>
