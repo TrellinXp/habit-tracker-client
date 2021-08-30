@@ -10,9 +10,10 @@ export default class CreateHabit extends Component {
     }
 
     getDate(){
-        let today = new Date();
+        let date = new Date(Date.now());
+        let dateArr = date.toISOString().split('T');
         this.setState({
-            date: today
+            date: dateArr[0] 
         })
     }
 
@@ -37,8 +38,7 @@ export default class CreateHabit extends Component {
         // so the names have to match
         axios.post("http://localhost:5000/api/habits/",  { title, description, amount, unit, date, user, goodHabit } )
         .then( () => {
-            // after submitting the form, retrieve project one more time so the new task is displayed as well 
-            //this.setState({title: "", description: "", amount:"", unit:""});
+            this.props.history.push('/calendar');
         })
         .catch( error => console.log(error) )
     }
@@ -52,33 +52,33 @@ export default class CreateHabit extends Component {
     render() {
         return (
             <div>
-                <h1>Create Habit</h1>
+                <h1 className="page-headline">Create Habit</h1>
                 <form className="form-box" onSubmit={this.handleFormSubmit}>
-                    <div className="habit-properties"> 
-                    <label>Title:</label>
-                    <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
+                    <div className="habit-properties">
+                        <label>Title:</label>
+                        <input type="text" name="title" value={this.state.title} onChange={e => this.handleChange(e)} />
                     </div>
-                    <div className="habit-properties"> 
-                    <label>Description:</label>
-                    <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
+                    <div className="habit-properties">
+                        <label>Description:</label>
+                        <textarea name="description" value={this.state.description} onChange={e => this.handleChange(e)} />
                     </div>
-                    <div className="habit-properties"> 
-                    <label>Amount:</label>
-                    <input name="amount" type="number" value={this.state.amount} onChange={ e => this.handleChange(e)} />
+                    <div className="habit-properties">
+                        <label>Amount:</label>
+                        <input name="amount" type="number" value={this.state.amount} onChange={e => this.handleChange(e)} />
                     </div>
-                    <div className="habit-properties"> 
-                    <label>Unit:</label>
-                    <textarea name="unit" value={this.state.unit} onChange={ e => this.handleChange(e)} />
+                    <div className="habit-properties">
+                        <label>Unit:</label>
+                        <input name="unit" type="text" value={this.state.unit} onChange={e => this.handleChange(e)} />
                     </div>
-                    <div className="habit-properties"> 
-                    <label>Date:</label>
-                    <input type="date" name="date" valueAsDate={this.state.date} onChange={ e => this.handleChange(e)} />
+                    <div className="habit-properties">
+                        <label>Date:</label>
+                        <input type="date" name="date" value={this.state.date} onChange={e => this.handleChange(e)} />
                     </div>
-                    <div className="habit-properties"> 
-                    <label>Good Habit:</label>
-                    <input type="checkbox" id="goodHabit" name="goodHabit" onChange={ e => this.handleChange(e)} />
+                    <div className="habit-properties">
+                        <label>Good Habit:</label>
+                        <input className="habbit-checkbox" type="checkbox" id="goodHabit" name="goodHabit" onChange={e => this.handleChange(e)} />
                     </div>
-                    <input type="submit" value="Submit" />
+                    <input className="habit-button" type="submit" value="Submit" />
                 </form>
             </div>
         )

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+
 
 export default class HabitTile extends Component {
-    
+
     state = {
         habits: []
     }
@@ -18,7 +20,8 @@ export default class HabitTile extends Component {
             <div>
                 { this.props.listOfHabitsObj.map( habit => {
                     return (<div key={habit._id} className="habit-tile">
-                        <h4>{habit.title}</h4>
+                        <Link className="detail-button" to={`/habits/${habit._id}`}
+><h4>{habit.title}</h4></Link>                        
                         </div>);
                 }) }
             </div>

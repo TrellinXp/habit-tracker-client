@@ -95,11 +95,96 @@ body {
   .form-box {
     display: flex;
     flex-direction: column;
-    width: 40vw;
-    margin: auto
+    width: 27vw;
+    margin: auto;
+    margin-top: 4vh;
+    height: 75.4vh;
   }
 
+  h1 {
+    font-weight: bold !important;
+    font-size: 40px !important;
+  }
+
+  .page-headline {
+    margin-top: 50px;
+  } 
+
   .habit-properties {
-    margin-bottom: 2% ;
-    
+    margin-bottom: 2%;
+    display: flex;
+  }
+
+  .habit-properties label {
+    width: 10vw;
+    text-align: left;
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+  }
+
+  .habit-properties input {
+    width: 70%;
+    text-align: left;
+    font-size: 26px;
+  }
+
+  .habit-properties textarea {
+    width: 70%;
+    text-align: left;
+    font-size: 26px;
+  }
+
+  .habbit-checkbox {
+    height: 26px;
+    margin-top: 5px;
+    width: 2vw !important;
+    margin-left: -1vw;
+  }
+
+  .habit-button {
+    width: 10vw;
+    margin-top: 2vh;
+  }
+
+  .detail-button {
+    color: white !important;
+  }
+
+  .habit-action {
+    background-color: cornflowerblue;
+    color: white !important;
+    border: none !important;
+    width: 10vw !important;
+    height: 3vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1vh;
+    font-weight: bold;
+  }
+
+  .delete-button {
+    background-color: red;
+  } 
+
+  .habit-actions {
+    display: flex;
+    flex-direction: column;
+    width: 10vw;    
+    margin: auto;
+    margin-top: 2vh;
+    font-weight: bold;    
+  }
+
+  .habit-details {
+    height: 85.2vh;
+  }
+
+  .habit-details p{
+    font-size: 24px;
+  }
+
+  .details-attributes {
+    margin-top: 5vh;
   }

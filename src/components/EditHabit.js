@@ -43,6 +43,7 @@ class EditHabit extends Component {
         .then(() => {
           // Use the passed down api call to render the updated project data
           console.log("Habbit Edited");
+          this.props.history.push('/calendar');
         })
         .catch(error => console.log(error))
     }
@@ -57,21 +58,33 @@ class EditHabit extends Component {
     render(){
         return (
             <div>
-                <hr />
-                <h3>Edit Habit</h3>
-                <form onSubmit={this.handleFormSubmit}>
-                    
-                    <label>Title:</label>
-                    <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChangeHabit(e)}/>
-                    <label>Description:</label>
-                    <textarea name="description" value={this.state.description} onChange={ e => this.handleChangeHabit(e)} />
-                    <label>Amount:</label>
-                    <input name="amount" type="number" value={this.state.amount} onChange={ e => this.handleChangeHabit(e)} />
-                    <label>Unit:</label>
-                    <textarea name="unit" value={this.state.unit} onChange={ e => this.handleChangeHabit(e)} />
-                    <label>Good Habit:</label>
-                    <input type="checkbox" id="goodHabit" name="goodHabit" onChange={ e => this.handleChangeHabit(e)} />
-                    <input type="submit" value="Submit" />
+              <h1 className="page-headline">Edit Habit</h1>
+                <form className="form-box" onSubmit={this.handleFormSubmit}>
+                    <div className="habit-properties">
+                        <label>Title:</label>
+                        <input type="text" name="title" value={this.state.title} onChange={e => this.handleChangeHabit(e)}/>
+                    </div>
+                    <div className="habit-properties">
+                        <label>Description:</label>
+                        <textarea name="description" value={this.state.description} onChange={e => this.handleChangeHabit(e)} />
+                    </div>
+                    <div className="habit-properties">
+                        <label>Amount:</label>
+                        <input name="amount" type="number" value={this.state.amount} onChange={e => this.handleChangeHabit(e)} />
+                    </div>
+                    <div className="habit-properties">
+                        <label>Unit:</label>
+                        <input name="unit" type="text" value={this.state.unit} onChange={e => this.handleChangeHabit(e)} />
+                    </div>
+                    <div className="habit-properties">
+                        <label>Date:</label>
+                        <input type="date" name="date" value={this.state.date} onChange={e => this.handleChangeHabit(e)} />
+                    </div>
+                    <div className="habit-properties">
+                        <label>Good Habit:</label>
+                        <input className="habbit-checkbox" type="checkbox" id="goodHabit" name="goodHabit" onChange={e => this.handleChangeHabit(e)} />
+                    </div>
+                    <input className="habit-button" type="submit" value="Submit" />
                 </form>
             </div>
         )

@@ -9,6 +9,7 @@ import Login from './components/auth/Login';
 import HabitDetails from './components/HabitDetails';
 import EditHabit from './components/EditHabit';
 import Calendar from './components/calendar/Calendar';
+import HabitTile from './components/calendar/HabitTile';
 
 class App extends Component {
 
@@ -74,6 +75,12 @@ class App extends Component {
             exact
             path="/habits/edit/:habitsId"
             render={(props) => <EditHabit {...props} />}
+          /> 
+
+        <Route
+            exact
+            path="/habitTile"
+            render={(props) => <HabitTile {...props} />}
           /> 
 
         </Switch>

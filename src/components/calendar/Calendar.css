@@ -40,11 +40,14 @@
 }
 
 .create-btn { 
-    background-color: royalblue;
-    height: 4vh;
-    width: 100%;
-    margin-top: 2vh;
+    background-color: royalblue !important;
+    color: white !important; 
+    padding: 1.5vh 4.4vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
+
 
 .habit-calendar {
     background-color: teal;

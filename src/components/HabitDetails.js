@@ -30,7 +30,7 @@ class HabitDetails extends Component {
         const { params } = this.props.match;
         axios.delete(`http://localhost:5000/api/habits/${params.habitsId}`, { withCredentials: true })
             .then(() => {
-                this.props.history.push('/habits');
+                this.props.history.push('/calendar');
             })
             .catch((err) => {
                 console.log(err)
@@ -44,23 +44,21 @@ class HabitDetails extends Component {
     render() {
        
         return (
-            <div>
-                <h1>Habit Details</h1>
-                <h3>Title: {this.state.title}</h3>
+            <div className="habit-details">
+                <h1 className="page-headline">Habit Details</h1>
+                <div className="details-attributes">
+                <h2>Title: {this.state.title}</h2>
                 <p>Description: {this.state.description}</p>
                 <p>Amount: {this.state.amount}</p>
                 <p>Unit: {this.state.unit}</p>
                 <p>Good Habit: {this.state.goodHabit}</p>
                 <p>Date: {this.getDateString()}</p>
-    
-                {/* passing the info of the last state of the form before is updated */}
-                <Link to={`/habits/edit/${this.state.habitsId}`}> Edit habit</Link>
-
-                <p><button onClick={this.deleteHabit}>Delete habit</button>  </p>
-                
-                {/* delete button included in the details form, method for it up as well */}
-
-                <Link to={'/habits'}>Back to habits List</Link>
+                </div>
+                <div class="habit-actions"> 
+                <Link className="habit-action" to={`/habits/edit/${this.state.habitsId}`}> Edit habit</Link>
+                <button className="habit-action delete-button" onClick={this.deleteHabit}>Delete habit</button> 
+                <Link className="habit-action" to={'/calendar'}>Back to Calendar</Link>
+                </div>
             </div>
         )
     }

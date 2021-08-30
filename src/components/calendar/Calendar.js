@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './../calendar/Calendar.css';
 import axios from 'axios';
 import HabitTile from './HabitTile';
+import { Link } from 'react-router-dom';
 
 const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
@@ -33,8 +34,8 @@ export default class Calendar extends Component {
                     return (
                         <div key={weekday} className="week-day">
                             <div className="week-header">{weekday}</div>
-                                <button className="create-btn">Create Habit</button>
-                                <HabitTile listOfHabitsObj={this.state.listOfHabits.filter(
+                            <Link className="create-btn" to="/createHabit">Create Habit</Link>
+                            <HabitTile listOfHabitsObj={this.state.listOfHabits.filter(
                                     habit => new Date(habit.date).getDay() === (weekdays.lastIndexOf(weekday) +1)).filter(habit => habit.goodHabit === true)}></HabitTile>                    
                         </div>
                     )})
@@ -50,7 +51,8 @@ export default class Calendar extends Component {
                     <div key={weekday} className="week-day">
                         <div className="week-header">{weekday}
                         </div>
-                         <button className="create-btn">Create Habit</button>
+                         <Link className="create-btn" to="/createHabit">Create Habit</Link>
+        
                          <HabitTile listOfHabitsObj={this.state.listOfHabits.filter(
                              habit => new Date(habit.date).getDay() === (weekdays.lastIndexOf(weekday) +1)).filter(habit => habit.goodHabit === false)}></HabitTile> 
                     </div>
