@@ -8,8 +8,23 @@ class Login extends Component {
 
   constructor(props) {
     super(props);
+
+    this.setState(
+      {
+        isSignup: this.props.isSignup
+      }
+    )
     // This binding is necessary to make `this` work in the callback
     this.changeToSignup = this.changeMode.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState(
+      {
+        isSignup: this.props.isSignup
+      }
+    )
+    console.log(this.state.isSignup);
   }
  
   handleFormSubmit = event => {
@@ -60,6 +75,11 @@ class Login extends Component {
 
   changeMode = () => {
     this.state.isSignup ? this.setState({isSignup: false}) : this.setState({isSignup: true});
+    if(!this.state.isSignup) {
+      this.props.history.push('/signup');
+    } else {
+      this.props.history.push('/');
+    }
   }
 
   getModeText() {
