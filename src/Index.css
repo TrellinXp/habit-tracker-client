@@ -95,7 +95,7 @@ body {
   .form-box {
     display: flex;
     flex-direction: column;
-    width: 27vw;
+    width: 30%;
     margin: auto;
     margin-top: 4vh;
     height: 75.4vh;
@@ -113,10 +113,11 @@ body {
   .habit-properties {
     margin-bottom: 2%;
     display: flex;
+    width: 38vw;
   }
 
   .habit-properties label {
-    width: 10vw;
+    width:10vw;
     text-align: left;
     font-size: 26px;
     color: black;
@@ -124,13 +125,13 @@ body {
   }
 
   .habit-properties input {
-    width: 70%;
+    width: 50%;
     text-align: left;
     font-size: 26px;
   }
 
   .habit-properties textarea {
-    width: 70%;
+    width:50%;
     text-align: left;
     font-size: 26px;
   }
@@ -139,7 +140,7 @@ body {
     height: 26px;
     margin-top: 5px;
     width: 2vw !important;
-    margin-left: -1vw;
+    margin-left: -0.5vw;
   }
 
   .habit-button {
@@ -187,4 +188,8 @@ body {
 
   .details-attributes {
     margin-top: 5vh;
+  }
+
+  .create-habit {
+    height: 85.2vh;
   }

@@ -51,7 +51,7 @@ export default class CreateHabit extends Component {
 
     render() {
         return (
-            <div>
+            <div className="create-habit">
                 <h1 className="page-headline">Create Habit</h1>
                 <form className="form-box" onSubmit={this.handleFormSubmit}>
                     <div className="habit-properties">

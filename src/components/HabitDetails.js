@@ -54,7 +54,7 @@ class HabitDetails extends Component {
                 <p>Good Habit: {this.state.goodHabit}</p>
                 <p>Date: {this.getDateString()}</p>
                 </div>
-                <div class="habit-actions"> 
+                <div className="habit-actions"> 
                 <Link className="habit-action" to={`/habits/edit/${this.state.habitsId}`}> Edit habit</Link>
                 <button className="habit-action delete-button" onClick={this.deleteHabit}>Delete habit</button> 
                 <Link className="habit-action" to={'/calendar'}>Back to Calendar</Link>
