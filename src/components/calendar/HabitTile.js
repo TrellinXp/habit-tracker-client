@@ -6,12 +6,6 @@ export default class HabitTile extends Component {
         habits: []
     }
 
-    constructor() {
-        super();
-        //this.getHabitsForWeekday();
-    }
-
-
     getHabitsForWeekday(weekday) {
         let filteredHabits = this.props.listOfHabits.filter(habit => new Date(habit.date).getDay() === 5);
         this.setState({
