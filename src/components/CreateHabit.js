@@ -3,7 +3,18 @@ import React, { Component } from 'react'
 import axios from 'axios';
  
 export default class CreateHabit extends Component {
-    state = { title: "", description: "", amount:1, unit:"", isShowing: false } 
+    state = { title: "", description: "", amount:1, unit:"", date: new Date(), isShowing: false } 
+
+    componentDidMount() {
+        this.getDate()
+    }
+
+    getDate(){
+        let today = new Date();
+        this.setState({
+            date: today
+        })
+    }
 
     handleFormSubmit = (event) => {
         event.preventDefault();
@@ -42,17 +53,31 @@ export default class CreateHabit extends Component {
         return (
             <div>
                 <h1>Create Habit</h1>
-                <form onSubmit={this.handleFormSubmit}>
+                <form className="form-box" onSubmit={this.handleFormSubmit}>
+                    <div className="habit-properties"> 
                     <label>Title:</label>
                     <input type="text" name="title" value={this.state.title} onChange={ e => this.handleChange(e)}/>
+                    </div>
+                    <div className="habit-properties"> 
                     <label>Description:</label>
                     <textarea name="description" value={this.state.description} onChange={ e => this.handleChange(e)} />
+                    </div>
+                    <div className="habit-properties"> 
                     <label>Amount:</label>
                     <input name="amount" type="number" value={this.state.amount} onChange={ e => this.handleChange(e)} />
+                    </div>
+                    <div className="habit-properties"> 
                     <label>Unit:</label>
                     <textarea name="unit" value={this.state.unit} onChange={ e => this.handleChange(e)} />
+                    </div>
+                    <div className="habit-properties"> 
+                    <label>Date:</label>
+                    <input type="date" name="date" valueAsDate={this.state.date} onChange={ e => this.handleChange(e)} />
+                    </div>
+                    <div className="habit-properties"> 
                     <label>Good Habit:</label>
                     <input type="checkbox" id="goodHabit" name="goodHabit" onChange={ e => this.handleChange(e)} />
+                    </div>
                     <input type="submit" value="Submit" />
                 </form>
             </div>

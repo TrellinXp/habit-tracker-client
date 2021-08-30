@@ -91,3 +91,15 @@ body {
     font-weight: bold;
     font-size: 20px;
   }
+
+  .form-box {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: auto
+  }
+
+  .habit-properties {
+    margin-bottom: 2% ;
+    
+  }
