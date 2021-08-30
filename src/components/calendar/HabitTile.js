@@ -18,12 +18,18 @@ export default class HabitTile extends Component {
     render() {
         return (
             <div>
-                { this.props.listOfHabitsObj.map( habit => {
-                    return (<div key={habit._id} className="habit-tile">
-                        <Link className="detail-button" to={`/habits/${habit._id}`}
-><h4>{habit.title}</h4></Link>                        
+                {this.props.listOfHabitsObj.slice(0, 5).map(habit => {
+                    if (habit.goodHabit) {
+                        return (<div key={habit._id} className="habit-tile-good">
+                            <Link className="detail-button" to={`/habits/${habit._id}`}><h4>{habit.title}</h4></Link>
                         </div>);
-                }) }
+                    } else {
+                        return (<div key={habit._id} className="habit-tile-bad">
+                            <Link className="detail-button" to={`/habits/${habit._id}`}><h4>{habit.title}</h4></Link>
+                        </div>);
+                    }
+                })
+                }
             </div>
         )
     }

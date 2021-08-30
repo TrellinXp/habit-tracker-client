@@ -28,7 +28,7 @@ export default class Calendar extends Component {
         return (
             <div>
                 <div className="goodHabits">
-                    <h1>Good Habits</h1>
+                    <h1 className="page-headline">Good Habits</h1>
                     <div className="week">
                     {weekdays.map( weekday => {
                     return (

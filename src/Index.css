@@ -70,15 +70,25 @@ body {
     height: 2vh;
     margin: 0;
     font-weight: bold;
-    width: 87vw;
+    width: 90vw;
   }
   
   .navigation a {
     color: #0554ff;
   }
+
+  .navigation a:hover {
+    color: #5a8efd;
+  }
+
+  
+  .navigation a:visited {
+    color: #5a8efd;
+  }
   
   .navigation-item {
-    width: 20vw;
+    width: 18vw;
+    font-size: 20px;
     color:transparent;
   }
   
@@ -87,9 +97,12 @@ body {
   }
   
   .username {
-    margin-left: 3vw;
+    margin-left: 1vw;
     font-weight: bold;
     font-size: 20px;
+    width: 8vw;
+    justify-content: left;
+    display: flex;
   }
 
   .form-box {
@@ -192,4 +205,10 @@ body {
 
   .create-habit {
     height: 85.2vh;
+  }
+
+  .login-container {
+    width: 100vw;
+    height: 70vh;
+    position: fixed;
   }
