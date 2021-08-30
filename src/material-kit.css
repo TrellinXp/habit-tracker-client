@@ -17100,7 +17100,7 @@ footer .pull-center {
   margin-right: 15px;
   margin-top: -30px;
   border: 0;
-  background: linear-gradient(60deg, #eee, #bdbdbd);
+  background: linear-gradient(60deg, #61b8ff, #0554ff);
 }
 
 .card .card-header .title {
@@ -17174,7 +17174,7 @@ footer .pull-center {
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-  background: linear-gradient(60deg, #ab47bc, #7b1fa2);
+  background: linear-gradient(60deg, #4f87ff, #0554ff);
 }
 
 .card .card-header-info,

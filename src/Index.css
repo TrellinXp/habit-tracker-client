@@ -45,12 +45,12 @@ body {
   }
   
   .page-header {
-    height: 87vh !important;
+    height: 83.7vh !important;
   }
   
   .signup-btn {
     background-color: white;
-    color: #d400ff;
+    color: #0554ff;
     border: none;
     font-weight: bold;
     font-size: 20px;
@@ -74,7 +74,7 @@ body {
   }
   
   .navigation a {
-    color: #d400ff;
+    color: #0554ff;
   }
   
   .navigation-item {
