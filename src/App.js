@@ -44,7 +44,7 @@ class App extends Component {
           <Route
             exact
             path="/createHabit"
-            render={(props) => <CreateHabit {...props} />}
+            render={(props) => <CreateHabit user={this.state.user} {...props} />}
           />
 
           <Route
