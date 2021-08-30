@@ -53,8 +53,11 @@ class Navbar extends React.Component {
             <nav className="navbar">
                 <div className="username">{this.props.userIsLoggedIn && `Hello ${this.props.userData.username}`}</div>
                 <ul className="navigation">
-                    {this.renderCalendar()}
-                    {this.renderCreateHabit()}
+                  
+                    {this.props.userIsLoggedIn
+                        ? this.renderCalendar() : "" }
+                       {this.props.userIsLoggedIn
+                        ? this.renderCreateHabit(): ""}
                     {this.props.userIsLoggedIn
                         ? this.renderLogoutLink()
                         : this.renderAuthLinks()
