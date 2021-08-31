@@ -13,7 +13,7 @@ class EditHabit extends Component {
     getSingleHabit = () => {
         const { params } = this.props.match;// to make a query to an specific point using react
         this.setState({habitsId: params.habitsId});
-        axios.get(`http://localhost:5000/api/habits/${params.habitsId}`, { withCredentials: true })
+        axios.get(process.env.REACT_APP_API_URL+`/api/habits/${params.habitsId}`, { withCredentials: true })
             .then(responseFromApi => {
                 const theHabit = responseFromApi.data;
                 this.setState(theHabit);
@@ -39,7 +39,7 @@ class EditHabit extends Component {
 
         event.preventDefault();
 
-        axios.put(`http://localhost:5000/api/habits/${this.state.habitsId}`, { title, description, amount, unit, goodHabit, date }, { withCredentials: true })
+        axios.put(process.env.REACT_APP_API_URL+`/api/habits/${this.state.habitsId}`, { title, description, amount, unit, goodHabit, date }, { withCredentials: true })
         .then(() => {
           // Use the passed down api call to render the updated project data
           console.log("Habbit Edited");

@@ -13,7 +13,7 @@ class HabitDetails extends Component {
     getSingleHabit = () => {
         const { params } = this.props.match;// to make a query to an specific point using react
         this.setState({habitsId: params.habitsId});
-        axios.get(`http://localhost:5000/api/habits/${params.habitsId}`, { withCredentials: true })
+        axios.get(process.env.REACT_APP_API_URL+`/api/habits/${params.habitsId}`, { withCredentials: true })
             .then(responseFromApi => {
                 const theHabit = responseFromApi.data;
                 console.log('date:', theHabit.date);
@@ -28,7 +28,7 @@ class HabitDetails extends Component {
     //DELETE
     deleteHabit = () => {
         const { params } = this.props.match;
-        axios.delete(`http://localhost:5000/api/habits/${params.habitsId}`, { withCredentials: true })
+        axios.delete(process.env.REACT_APP_API_URL+`/api/habits/${params.habitsId}`, { withCredentials: true })
             .then(() => {
                 this.props.history.push('/calendar');
             })

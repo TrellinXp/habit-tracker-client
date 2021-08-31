@@ -36,7 +36,7 @@ export default class CreateHabit extends Component {
         
         // { title, description, projectID } => this is 'req.body' that will be received on the server side in this route, 
         // so the names have to match
-        axios.post("http://localhost:5000/api/habits/",  { title, description, amount, unit, date, user, goodHabit } )
+        axios.post(process.env.REACT_APP_API_URL+"/habits/",  { title, description, amount, unit, date, user, goodHabit } )
         .then( () => {
             this.props.history.push('/calendar');
         })
