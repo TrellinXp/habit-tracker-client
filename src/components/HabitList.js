@@ -6,7 +6,7 @@ class HabitList extends Component {
     state = { listOfHabits: [] } //L ist of habits is an empty array
 
     getAllHabits = () => {
-        axios.get(process.env.REACT_APP_API_URL+`/api/habits`, { withCredentials: true })
+        axios.get(process.env.REACT_APP_API_URL+`/habits`, { withCredentials: true })
             .then(responseFromApi => {
                 this.setState({
                     listOfHabits: responseFromApi.data
