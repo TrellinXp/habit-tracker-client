@@ -19,6 +19,13 @@ export default class Calendar extends Component {
         dateCounter = 1;
     }
 
+    getMonday(date) {
+        let d = new Date(date);
+        var day = d.getDay(),
+            diff = d.getDate() - day + (day === 0 ? -6:1); // adjust when day is sunday
+        return new Date(d.setDate(diff));
+    }
+    
     getAllHabits = () => {
         axios.get(process.env.REACT_APP_API_URL+`/habits`, { withCredentials: true })
             .then(responseFromApi => {
@@ -48,7 +55,7 @@ export default class Calendar extends Component {
 
     componentDidMount() {
         this.getAllHabits();
-        this.getDatesToDisplay(new Date(Date.now()));
+        this.getDatesToDisplay(this.getMonday(new Date(Date.now())));
     }
     
     getDateString(date) {
