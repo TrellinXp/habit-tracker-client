@@ -63,7 +63,12 @@ class EditHabit extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+    }
 
+    handleChangeHabitCheckbox = (event) => {
+        this.setState({
+            [event.target.name]: event.target.checked
+        })
     }
 
     render(){
@@ -93,7 +98,7 @@ class EditHabit extends Component {
                     </div>
                     <div className="habit-properties">
                         <label>Good Habit:</label>
-                        <input className="habbit-checkbox" checked={this.state.goodHabit} type="checkbox" id="goodHabit" name="goodHabit" onChange={e => this.handleChangeHabit(e)} />
+                        <input className="habbit-checkbox" checked={this.state.goodHabit} type="checkbox" id="goodHabit" name="goodHabit" onChange={e => this.handleChangeHabitCheckbox(e)} />
                     </div>
                     <input className="habit-button" type="submit" value="Submit" />
                 </form>
