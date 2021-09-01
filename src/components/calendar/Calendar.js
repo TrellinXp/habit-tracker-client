@@ -84,7 +84,7 @@ export default class Calendar extends Component {
                             <div className="week-header"><div>{weekday}</div><div>{this.state.dates[dateCounter]}</div></div>
                             <Link className="create-btn" to="/createHabit">Create Habit</Link>
                             <HabitTile listOfHabitsObj={this.state.listOfHabits.filter(
-                                    habit => new Date(habit.date).getDay() === (weekdays.lastIndexOf(weekday) +1))}></HabitTile>                    
+                                    habit => new Date(habit.date).getDay() === (weekdays.lastIndexOf(weekday) +1)).sort((a, b) => (a.goodHabit > b.goodHabit) ? 1 : -1)}></HabitTile>                    
                         </div>
                     )})
                     } 
