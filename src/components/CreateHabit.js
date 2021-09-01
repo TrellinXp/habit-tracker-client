@@ -30,12 +30,7 @@ export default class CreateHabit extends Component {
         }
         const date = this.state.date;
         console.log(this.props.user)
-        const user = this.props.user._id; // <== we need to know to which project the created task belong, so we need to get its 'id'
-                                                    // it has to be the 'id' because we are referencing project 
-                                                    // by its id in the task model on the server side ( project: {type: Schema.Types.ObjectId, ref: 'Project'})
-        
-        // { title, description, projectID } => this is 'req.body' that will be received on the server side in this route, 
-        // so the names have to match
+        const user = this.props.user._id; 
         axios.post(process.env.REACT_APP_API_URL+"/habits/",  { title, description, amount, unit, date, user, goodHabit } )
         .then( () => {
             this.props.history.push('/calendar');
