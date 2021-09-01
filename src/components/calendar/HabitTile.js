@@ -18,7 +18,7 @@ export default class HabitTile extends Component {
     render() {
         return (
             <div>
-                {this.props.listOfHabitsObj.slice(0, 8).map(habit => {
+                {this.props.listOfHabitsObj.slice(0, 10).map(habit => {
                     if (habit.goodHabit) {
                         return (<div key={habit._id} className="habit-tile-good">
                             <Link className="detail-button" to={`/habits/${habit._id}`}><h4 className="habit-title">{habit.title}</h4></Link>
