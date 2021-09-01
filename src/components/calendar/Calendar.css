@@ -82,8 +82,8 @@
 .habit-tile-good {
     background-color: green;
     border: 2px solid lightgray;
-    height: 6vh;
-    min-height: 30px;
+    height: 4vh;
+    min-height: 40px;
     padding: 0.25vh;
     margin-top: 0.7vh;
 }
