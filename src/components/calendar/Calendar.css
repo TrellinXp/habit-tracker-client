@@ -84,7 +84,6 @@
     border: 2px solid lightgray;
     height: 4vh;
     min-height: 40px;
-    padding: 0.25vh;
     margin-top: 0.7vh;
     display: flex;
     justify-content: center;
@@ -94,8 +93,11 @@
     background-color: orange;
     border: 2px solid lightgray;
     height: 8vh;
-    padding: 0.25vh;
+    min-height: 40px;
     margin-top: 0.7vh;
+    display: flex;
+    justify-content: center;
+}
 }
 
 .changeWeeks {
