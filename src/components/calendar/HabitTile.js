@@ -17,9 +17,9 @@ export default class HabitTile extends Component {
 
     getIsGoodHabit(habit) {
         if(habit.goodHabit) {
-            return "*Good*";
+            return "*Good*   ";
         } 
-        return "*Bad*";
+        return "*Bad*   ";
     }
     
     render() {
