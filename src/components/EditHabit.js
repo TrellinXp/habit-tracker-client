@@ -8,6 +8,9 @@ class EditHabit extends Component {
     componentDidMount() {
         this.getSingleHabit();
         this.getDate();
+        setTimeout(function (){
+            console.log(this.state.date);
+        }, 5000);
     }
 
     getDate(){
