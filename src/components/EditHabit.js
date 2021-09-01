@@ -28,6 +28,12 @@ class EditHabit extends Component {
         axios.get(process.env.REACT_APP_API_URL+`/habits/${params.habitsId}`, { withCredentials: true })
             .then(responseFromApi => {
                 const theHabit = responseFromApi.data;
+                if(theHabit.goodHabit === true) {
+                    theHabit.goodHabit = 'on';
+                } else {
+                    theHabit.goodHabit = 'off';
+                }
+
                 this.setState(theHabit);
             })
 
