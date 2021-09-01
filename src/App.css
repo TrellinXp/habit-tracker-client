@@ -40,7 +40,7 @@
 .title { 
   height: 10vh !important;
   padding-top: 4vh;
-  margin-top: 0;
+  margin-top: 0px;
 } 
 
 @keyframes App-logo-spin {

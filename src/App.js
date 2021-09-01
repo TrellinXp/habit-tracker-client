@@ -59,7 +59,7 @@ class App extends Component {
           <Route 
             exact
             path="/calendar"
-            render={(props) => <Calendar {...props} />}
+            render={(props) => <Calendar {...props} user={this.state.user} />}
           />
 
           <Route
@@ -67,7 +67,7 @@ class App extends Component {
             path="/"
             render={(props) => <Login {...props} getUser={this.getTheUser} isSignup={false} />}
           />
-          
+
           <Route
             exact
             path="/habits/:habitsId"
