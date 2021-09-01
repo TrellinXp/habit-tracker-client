@@ -95,7 +95,9 @@ body {
   }
   
   .navbar {
-    margin-bottom: 0px !important
+    margin-bottom: 0px !important;
+    height: 8vh;
+    box-shadow: none !important;
   }
   
   .username {
