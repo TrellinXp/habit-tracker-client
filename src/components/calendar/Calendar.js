@@ -61,12 +61,11 @@ export default class Calendar extends Component {
     }
 
     previousWeek = () => {
-        let previousWeekObj = currentStartDate;
-        console.log(currentStartDate); 
+        let previousWeekObj = JSON.parse(JSON.stringify(currentStartDate));
+        console.log(previousWeekObj);
         previousWeekObj.setDate(previousWeekObj.getDate() -8);
-        console.log(currentStartDate); 
         currentStartDate = previousWeekObj;
-        console.log(currentStartDate); 
+        console.log(currentStartDate);
         this.getDatesToDisplay(previousWeekObj);
     }
 
@@ -85,7 +84,7 @@ export default class Calendar extends Component {
                             <div className="week-header"><div>{weekday}</div><div>{this.state.dates[dateCounter]}</div></div>
                             <Link className="create-btn" to="/createHabit">Create Habit</Link>
                             <HabitTile listOfHabitsObj={this.state.listOfHabits.filter(
-                                    habit => this.getDateString(new Date(habit.date)) === (this.state.dates[dateCounter]))}></HabitTile>                    
+                                    habit => new Date(habit.date).getDay() === (weekdays.lastIndexOf(weekday) +1))}></HabitTile>                    
                         </div>
                     )})
                     } 
