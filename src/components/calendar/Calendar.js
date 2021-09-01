@@ -73,7 +73,7 @@ export default class Calendar extends Component {
         this.clearCounter();
         return (
             <div className="calendar-container">
-                <div className="changeWeeks"><div className="changeWeek"><button onClick={this.previousWeek}>Previous Week</button></div><h1 className="page-headline-calendar">Good Habits</h1><div className="changeWeek"><button>Next Week</button></div></div>
+                <div className="changeWeeks"><div className="changeWeek"><button onClick={this.previousWeek}>Previous Week</button></div><h1 className="page-headline-calendar">Habits</h1><div className="changeWeek"><button>Next Week</button></div></div>
                 <div className="goodHabits">
                     <div className="week">
                     {

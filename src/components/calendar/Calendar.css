@@ -82,7 +82,8 @@
 .habit-tile-good {
     background-color: green;
     border: 2px solid lightgray;
-    height: 4vh;
+    height: 6vh;
+    min-height: 30px;
     padding: 0.25vh;
     margin-top: 0.7vh;
 }
@@ -90,7 +91,7 @@
 .habit-tile-bad {
     background-color: orange;
     border: 2px solid lightgray;
-    height: 4vh;
+    height: 8vh;
     padding: 0.25vh;
     margin-top: 0.7vh;
 }
