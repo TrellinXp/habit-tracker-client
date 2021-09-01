@@ -24,7 +24,6 @@ class Login extends Component {
         isSignup: this.props.isSignup
       }
     )
-    console.log(this.state.isSignup);
   }
  
   handleFormSubmit = event => {
