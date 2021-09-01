@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 var dateCounter = 0;
+var currentStartDate = new Date(Date.now());
 export default class Calendar extends Component {
     state = {
         listOfHabits: [],
@@ -15,8 +16,7 @@ export default class Calendar extends Component {
 
     constructor() {
         super();
-        dateCounter = 0;
-        console.log(dateCounter);
+        dateCounter = 1;
     }
 
     getAllHabits = () => {
@@ -32,8 +32,9 @@ export default class Calendar extends Component {
         let datesObj = [];
         let nextDate = startDate;
         let dateArr = nextDate.toISOString().split('T');
+    
         datesObj.push(dateArr[0]);
-        for(let count = 0; count<= 6; count++) {
+        for(let count = 0; count <= 5; count++) {
             let nextDate = startDate;
             nextDate.setDate(nextDate.getDate() + 1);
             let dateArr = nextDate.toISOString().split('T');
@@ -47,21 +48,25 @@ export default class Calendar extends Component {
 
     componentDidMount() {
         this.getAllHabits();
-        this.getDatesToDisplay(new Date());
+        this.getDatesToDisplay(new Date(Date.now()));
+    }
+    
+    getDateString(date) {
+        let dateArr = date.toISOString().split('T');
+        return dateArr[0];
     }
 
     clearCounter() {
-        dateCounter = 0;
+        dateCounter = -1;
     }
 
     previousWeek = () => {
-        let previousWeekObj = this.state.previousWeek;
+        let previousWeekObj = currentStartDate;
+        console.log(currentStartDate); 
         previousWeekObj.setDate(previousWeekObj.getDate() -8);
-        console.log(previousWeekObj); 
-        this.setState({
-            previousWeek : previousWeekObj
-        })
-        console.log(previousWeekObj); 
+        console.log(currentStartDate); 
+        currentStartDate = previousWeekObj;
+        console.log(currentStartDate); 
         this.getDatesToDisplay(previousWeekObj);
     }
 
@@ -73,35 +78,20 @@ export default class Calendar extends Component {
                 <div className="goodHabits">
                     <div className="week">
                     {
-                    weekdays.map( weekday => {
+                    weekdays.map(weekday => {
                     dateCounter++;
                     return (
                         <div key={weekday} className="week-day">
                             <div className="week-header"><div>{weekday}</div><div>{this.state.dates[dateCounter]}</div></div>
                             <Link className="create-btn" to="/createHabit">Create Habit</Link>
                             <HabitTile listOfHabitsObj={this.state.listOfHabits.filter(
-                                    habit => new Date(habit.date).getDay() === (weekdays.lastIndexOf(weekday) +1)).filter(habit => habit.goodHabit === true)}></HabitTile>                    
+                                    habit => this.getDateString(new Date(habit.date)) === (this.state.dates[dateCounter]))}></HabitTile>                    
                         </div>
                     )})
                     } 
                     </div> 
                 </div>
 
-                <div className="badHabits"> 
-                    <h1>Bad Habits</h1>
-                    <div className="week">
-                    {weekdays.map( weekday => {
-                 return (
-                    <div key={weekday} className="week-day">
-                        <div className="week-header"><div>{weekday}</div><div>{this.state.dates[dateCounter]}</div></div>
-                         <Link className="create-btn" to="/createHabit">Create Habit</Link>        
-                         <HabitTile listOfHabitsObj={this.state.listOfHabits.filter(
-                             habit => new Date(habit.date).getDay() === (weekdays.lastIndexOf(weekday) +1)).filter(habit => habit.goodHabit === false)}></HabitTile> 
-                    </div>
-                )})
-                    }
-                    </div>
-                </div>
             </div>
         )
     }
