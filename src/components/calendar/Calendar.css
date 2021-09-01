@@ -92,12 +92,11 @@
 .habit-tile-bad {
     background-color: orange;
     border: 2px solid lightgray;
-    height: 8vh;
+    height: 4vh;
     min-height: 40px;
     margin-top: 0.7vh;
     display: flex;
     justify-content: center;
-}
 }
 
 .changeWeeks {
