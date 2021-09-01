@@ -33,7 +33,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="title">
         <h1 className="page-title"> Welcome to Habit Tracker</h1>
+        </div>
         <Navbar userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn} getUser={this.getTheUser} />
         <Switch>
           <Route exact path="/habits" render={() => {
@@ -47,11 +49,10 @@ class App extends Component {
             )
           }
           }/>
-          <GuardedRoute 
+          <Route 
             exact
             path="/createHabit"
             render={(props) => <CreateHabit user={this.state.user} {...props} />}
-            auth={this.isAuthenticated}
           />
 
           <Route
@@ -60,17 +61,16 @@ class App extends Component {
             render={(props) => <Login {...props} getUser={this.getTheUser} isSignup={true} />}
           />
 
-          <GuardedRoute 
+          <Route 
             exact
             path="/calendar"            
             render={(props) => <Calendar {...props} />}
-            auth={this.isAuthenticated}
           />
 
           <Route
             exact
             path="/"
-            render={(props) => <Login {...props} getUser={this.getTheUser}/>}
+            render={(props) => <Login {...props} getUser={this.getTheUser}  isSignup={false}/>}
           />
           <Route
             exact
