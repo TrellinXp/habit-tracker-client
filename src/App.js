@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="title">
+        <div className="title-container">
         <h1 className="page-title"> Welcome to Habit Tracker</h1>
         </div>
         <Navbar userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn} getUser={this.getTheUser} />

@@ -37,10 +37,10 @@
   color: #0554ff;
 }
 
-.title { 
+.title-container { 
   height: 10vh !important;
   padding-top: 4vh;
-  margin-top: 0px;
+  margin-top: 0px !important; 
 } 
 
 @keyframes App-logo-spin {
