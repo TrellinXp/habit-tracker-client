@@ -35,7 +35,7 @@ class EditHabit extends Component {
            goodHabit = true;
         }
         const date = this.state.date;
-        
+
         event.preventDefault();
 
         axios.put(process.env.REACT_APP_API_URL+`/habits/${this.state.habitsId}`, { title, description, amount, unit, goodHabit, date }, { withCredentials: true })
@@ -81,7 +81,7 @@ class EditHabit extends Component {
                     </div>
                     <div className="habit-properties">
                         <label>Good Habit:</label>
-                        <input className="habbit-checkbox" type="checkbox" id="goodHabit" name="goodHabit" onChange={e => this.handleChangeHabit(e)} />
+                        <input className="habbit-checkbox" value={this.state.goodHabit} type="checkbox" id="goodHabit" name="goodHabit" onChange={e => this.handleChangeHabit(e)} />
                     </div>
                     <input className="habit-button" type="submit" value="Submit" />
                 </form>
