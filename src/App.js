@@ -10,7 +10,6 @@ import HabitDetails from './components/HabitDetails';
 import EditHabit from './components/EditHabit';
 import Calendar from './components/calendar/Calendar';
 import HabitTile from './components/calendar/HabitTile';
-import GuardedRoute from './components/GuardedRoute';
 
 class App extends Component {
 
@@ -25,10 +24,6 @@ class App extends Component {
       isLoggedIn: loggedIn
     });
   };
-
-  isAuthenticated() {
-    return this.state.isLoggedIn;
-  }
 
   render() {
     return (
@@ -63,15 +58,16 @@ class App extends Component {
 
           <Route 
             exact
-            path="/calendar"            
+            path="/calendar"
             render={(props) => <Calendar {...props} />}
           />
 
           <Route
             exact
             path="/"
-            render={(props) => <Login {...props} getUser={this.getTheUser}  isSignup={false}/>}
+            render={(props) => <Login {...props} getUser={this.getTheUser} isSignup={false} />}
           />
+          
           <Route
             exact
             path="/habits/:habitsId"
