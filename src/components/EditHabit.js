@@ -7,6 +7,15 @@ class EditHabit extends Component {
 
     componentDidMount() {
         this.getSingleHabit();
+        this.getDate();
+    }
+
+    getDate(){
+        let date = new Date(Date.now());
+        let dateArr = date.toISOString().split('T');
+        this.setState({
+            date: dateArr[0] 
+        })
     }
 
     //GET SPECIFIC 
