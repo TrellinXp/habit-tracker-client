@@ -86,6 +86,8 @@
     min-height: 40px;
     padding: 0.25vh;
     margin-top: 0.7vh;
+    display: flex;
+    justify-content: center;
 }
 
 .habit-tile-bad {
@@ -102,6 +104,10 @@
 
 .changeWeek {
     width: 40vw;
+}
+
+.habit-title {
+    margin: 0;
 }
 
 .page-headline-calendar {
