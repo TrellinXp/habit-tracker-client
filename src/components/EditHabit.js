@@ -34,9 +34,8 @@ class EditHabit extends Component {
         if(this.state.goodHabit === 'on') {
            goodHabit = true;
         }
-        const date = Date.now();
-
-
+        const date = this.state.date;
+        
         event.preventDefault();
 
         axios.put(process.env.REACT_APP_API_URL+`/habits/${this.state.habitsId}`, { title, description, amount, unit, goodHabit, date }, { withCredentials: true })

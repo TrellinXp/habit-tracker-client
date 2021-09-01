@@ -41,6 +41,12 @@ class HabitDetails extends Component {
         return new Date(this.state.date).toLocaleDateString("en-US");
     }
 
+    isGoodHabit() {
+        return this.state.goodHabit
+        ? "Good Habit"
+        : "Bad Habit"
+    }
+
     render() {
        
         return (
@@ -51,7 +57,7 @@ class HabitDetails extends Component {
                 <p>Description: {this.state.description}</p>
                 <p>Amount: {this.state.amount}</p>
                 <p>Unit: {this.state.unit}</p>
-                <p>Good Habit: {this.state.goodHabit}</p>
+                <p>{this.isGoodHabit()}</p>
                 <p>Date: {this.getDateString()}</p>
                 </div>
                 <div className="habit-actions"> 
