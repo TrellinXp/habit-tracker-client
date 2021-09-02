@@ -1,0 +1,32 @@
+.navigation {
+    display: flex;
+    height: 2vh;
+    margin: 0;
+    font-weight: bold;
+    width: 90vw;
+}
+  
+.navigation a {
+    color: white;
+}
+
+.navigation a:hover {
+    color: white;
+}
+
+.navigation a:visited {
+    color: white;
+}
+
+.navigation-item {
+    width: 18vw;
+    font-size: 20px;
+    color:transparent;
+}
+
+.navbar {
+    margin-bottom: 0vh !important;
+    height: 8vh;
+    box-shadow: none !important;
+    background-color: royalblue !important;
+}

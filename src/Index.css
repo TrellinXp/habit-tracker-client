@@ -15,12 +15,12 @@ body {
   }
   
   .signup {
-    margin-top: 2vh;
+    margin-top: 3vh;
     font-size: 16px;
     width: 95%;
     margin-left: 1vw;
     text-align: left;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
   }
   
   html {
@@ -31,7 +31,7 @@ body {
   .footer {
     z-index: 2;
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     width: 100%;
     height: 80px;
     color: white !important;
@@ -65,39 +65,7 @@ body {
   }
   
   .login-button {
-    margin-top: 7%;
-  }
-  .navigation {
-    display: flex;
-    height: 2vh;
-    margin: 0;
-    font-weight: bold;
-    width: 90vw;
-  }
-  
-  .navigation a {
-    color: #0554ff;
-  }
-
-  .navigation a:hover {
-    color: #5a8efd;
-  }
-
-  
-  .navigation a:visited {
-    color: #5a8efd;
-  }
-  
-  .navigation-item {
-    width: 18vw;
-    font-size: 20px;
-    color:transparent;
-  }
-  
-  .navbar {
-    margin-bottom: 0px !important;
-    height: 8vh;
-    box-shadow: none !important;
+    margin-top: 10%;
   }
   
   .username {
@@ -107,6 +75,7 @@ body {
     width: 8vw;
     justify-content: left;
     display: flex;
+    color: white;
   }
 
   .form-box {
@@ -197,7 +166,9 @@ body {
   }
 
   .habit-details {
-    height: 85.2vh;
+    height: 82vh;
+    background: aliceblue;
+    padding-top: 2vh;
   }
 
   .habit-details p{
@@ -209,11 +180,25 @@ body {
   }
 
   .create-habit {
-    height: 85.2vh;
+    height: 82vh;
+    background: aliceblue;
+    padding-top: 2vw;
   }
 
   .login-container {
     width: 100vw;
     height: 70vh;
     position: fixed;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 18px;
+    margin-top: 2vh;
+    margin: 1.5vh;
+  }
+
+  .card-login {
+    height: 35vh !important;
+    margin-bottom: 0px;
   }

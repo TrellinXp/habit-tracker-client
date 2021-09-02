@@ -53,7 +53,7 @@ class HabitDetails extends Component {
             <div className="habit-details">
                 <h1 className="page-headline">Habit Details</h1>
                 <div className="details-attributes">
-                <h2>Title: {this.state.title}</h2>
+                <h2 className="habit-title">Title: {this.state.title}</h2>
                 <p>Description: {this.state.description}</p>
                 <p>Amount: {this.state.amount}</p>
                 <p>Unit: {this.state.unit}</p>

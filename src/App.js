@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="title-container">
-        <h1 className="page-title"> Welcome to Habit Tracker</h1>
+        <img src="diary.png" className="title-icon" alt="diary-icon"/>  <h1 className="page-title"> Welcome to Habit Tracker</h1> <img src="diary.png" className="title-icon" alt="diary-icon"/>
         </div>
         <Navbar userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn} getUser={this.getTheUser} />
         <Switch>
@@ -87,6 +87,9 @@ class App extends Component {
           /> 
 
         </Switch>
+        <div className="footer-container">
+        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </div>
       </div>
     );
   }

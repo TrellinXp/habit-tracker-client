@@ -3,8 +3,16 @@ import React, { Component } from 'react';
 import authService from '../../services/auth/auth-service';
 import '../../Index.css';
 
+const error_missing_credentials = "Missing credentials";
+
+const error_must_be_unique = "Username and email need to be unique. Either username or email is already used.";
+
+const error_message_unique = "Username and email need to be unique.";
+
+const error_message_missing_credentials = "Please enter a username and password";
+
 class Login extends Component {
-  state = { username: '', password: '', isSignup:false };
+  state = { username: '', password: '', isSignup:false, errorMessage: ''};
 
   constructor(props) {
     super(props);
@@ -25,6 +33,14 @@ class Login extends Component {
       }
     )
   }
+
+  setErrorMessage(errorMessage) {
+    this.setState(
+      {
+        errorMessage: errorMessage
+      }
+    )
+  }
  
   handleFormSubmit = event => {
     event.preventDefault();
@@ -38,7 +54,15 @@ class Login extends Component {
           this.props.getUser(response, true);          
           this.props.history.push("/calendar");
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+          console.log(error);
+          let errorMessage = (error.response?.data.errorMessage !== undefined ? error.response?.data.errorMessage :  error.response?.data.message);  
+          if(error_must_be_unique === errorMessage) {
+            this.setErrorMessage(error_message_unique)
+          } else {
+            this.setErrorMessage(errorMessage);
+          }
+        });
     } else {
         authService
         .login(username, password)
@@ -46,8 +70,22 @@ class Login extends Component {
           this.setState({ username: '', password: '' });
           this.props.getUser(response, true);          
           this.props.history.push("/calendar");
+          this.setState(
+            {
+              errorMessage: ""
+            }
+          )
         })
-        .catch(error => console.log(error));
+        .catch(error => {
+          console.log(error);
+          let errorMessage = (error.response?.data.errorMessage !== undefined ? error.response?.data.errorMessage :  error.response?.data.message);  
+          if(error_missing_credentials === errorMessage  ) {
+            this.setErrorMessage(error_message_missing_credentials);
+          } else {
+            this.setErrorMessage(errorMessage);
+          }
+
+        });
     }
   };
  
@@ -93,10 +131,6 @@ class Login extends Component {
     return (<div className="login-container">
     <nav className="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div className="container">
-      <div className="navbar-translate">
-        <a className="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
-          Material Kit </a>
-      </div>
       <div className="collapse navbar-collapse">
       </div>
     </div>
@@ -132,15 +166,20 @@ class Login extends Component {
                         onChange={this.handleChange} className="form-control" placeholder="Password..." />
                     </div>
                   </div>
+
                   <div className="login-button">
                     {this.hasUser()}
                   </div>
             </form>
             <div className="text-center">
                         
-                        <div className="signup">
-                             Don't have a user <button onClick={this.changeMode} className="signup-btn">{this.getModeText()}</button>
-                        </div>
+                  <div className="signup">
+                        Don't have a user <button onClick={this.changeMode} className="signup-btn">{this.getModeText()}</button>
+                  </div>
+                        
+                  <div className="error-message">
+                    {this.state.errorMessage}
+                  </div>
             </div>
           </div>
         </div>
