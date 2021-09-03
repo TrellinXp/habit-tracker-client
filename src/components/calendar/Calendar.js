@@ -26,8 +26,9 @@ export default class Calendar extends Component {
         return new Date(d.setDate(diff));
     }
     
-    getAllHabits = () => {
-        axios.get(process.env.REACT_APP_API_URL+`/habits`, { withCredentials: true })
+    getAllHabitsForUser = () => {
+        const user = this.props.user._id; 
+        axios.get(process.env.REACT_APP_API_URL+`/habitsForUser/${user}`, { withCredentials: true })
             .then(responseFromApi => {
                 this.setState({
                     listOfHabits: responseFromApi.data
@@ -54,7 +55,7 @@ export default class Calendar extends Component {
     }
 
     componentDidMount() {
-        this.getAllHabits();
+        this.getAllHabitsForUser();
         this.getDatesToDisplay(this.getMonday(new Date(Date.now())));
     }
     

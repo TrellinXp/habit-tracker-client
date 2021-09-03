@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import authService from '../../services/auth/auth-service';
 import '../../Index.css';
@@ -76,15 +75,14 @@ class Login extends Component {
             }
           )
         })
-        .catch(error => {
-          console.log(error);
-          let errorMessage = (error.response?.data.errorMessage !== undefined ? error.response?.data.errorMessage :  error.response?.data.message);  
+        .catch(errorObj => {
+          console.log(errorObj);
+          let errorMessage = (errorObj.response?.data.errorMessage !== undefined ? errorObj.response?.data.errorMessage :  errorObj.response?.data.message);  
           if(error_missing_credentials === errorMessage  ) {
             this.setErrorMessage(error_message_missing_credentials);
           } else {
             this.setErrorMessage(errorMessage);
           }
-
         });
     }
   };

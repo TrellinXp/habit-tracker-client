@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="title-container">
-        <img src="diary.png" className="title-icon" alt="diary-icon"/>  <h1 className="page-title"> Welcome to Habit Tracker</h1> <img src="diary.png" className="title-icon" alt="diary-icon"/>
+        <img src="diary.png" className="title-icon" alt="diary-icon"/>  <div className="page-title"><h1>Welcome to Habit Tracker</h1></div> <img src="diary.png" className="title-icon" alt="diary-icon"/>
         </div>
         <Navbar userData={this.state.user} userIsLoggedIn={this.state.isLoggedIn} getUser={this.getTheUser} />
         <Switch>

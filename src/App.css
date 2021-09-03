@@ -53,15 +53,21 @@
 
 .page-title {
   margin: 0;
-  padding: 2%;
+  padding: 3%;
+  height: 7vh !important;
   font-weight: bold;
   color: #0554ff;
+  padding-top: 1vh !important;
+  width: 40vw;
 }
 
 .title-container { 
   height: 10vh !important;
   padding-top: 2vh;
   margin-top: 0px !important; 
+  display: flex;
+  margin:auto;
+  width: 80vw;
 } 
 
 .title-icon {
@@ -79,6 +85,12 @@
   color: white !important;
   margin-left: -10vw;
   margin-top: -0.7vh;
+}
+
+.edit-container {
+  padding-top:2vh;
+  background: aliceblue;
+  height: 82vh;
 }
 
 @keyframes App-logo-spin {

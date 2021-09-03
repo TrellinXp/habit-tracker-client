@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
 class EditHabit extends Component {
     state = {}
 
     componentDidMount() {
         this.getSingleHabit();
         this.getDate();
-        setTimeout(function (){
-            console.log(this.state.date);
-        }, 5000);
     }
 
     getDate(){
@@ -70,7 +66,7 @@ class EditHabit extends Component {
 
     render(){
         return (
-            <div>
+            <div className="edit-container">
               <h1 className="page-headline">Edit Habit</h1>
                 <form className="form-box" onSubmit={this.handleFormSubmit}>
                     <div className="habit-properties">
