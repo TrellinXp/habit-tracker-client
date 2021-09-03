@@ -69,19 +69,38 @@ export default class Calendar extends Component {
     }
 
     previousWeek = () => {
-        let previousWeekObj = JSON.parse(JSON.stringify(currentStartDate));
-        console.log(previousWeekObj);
-        previousWeekObj.setDate(previousWeekObj.getDate() -8);
-        currentStartDate = previousWeekObj;
-        console.log(currentStartDate);
-        this.getDatesToDisplay(previousWeekObj);
+        //Get today's date using the JavaScript Date object.
+        var ourDate = this.getMonday(currentStartDate);
+
+        //Change it so that it is 7 days in the past.
+        var pastDate = ourDate.getDate() - 7;
+        ourDate.setDate(pastDate);
+
+        //Log the date to our web console.
+        console.log(ourDate);
+        this.getDatesToDisplay(ourDate);
+        currentStartDate = ourDate;
+    }
+
+    nextWeek = () => {
+        //Get today's date using the JavaScript Date object.
+        var ourDate = this.getMonday(currentStartDate);
+
+        //Change it so that it is 7 days in the past.
+        var pastDate = ourDate.getDate() + 7;
+        ourDate.setDate(pastDate);
+
+        //Log the date to our web console.
+        console.log(ourDate);
+        this.getDatesToDisplay(ourDate);
+        currentStartDate = ourDate;
     }
 
     render() {
         this.clearCounter();
         return (
             <div className="calendar-container">
-                <div className="changeWeeks"><div className="changeWeek"><button onClick={this.previousWeek}>Previous Week</button></div><h1 className="page-headline-calendar">Habits</h1><div className="changeWeek"><button>Next Week</button></div></div>
+                <div className="changeWeeks"><div className="changeWeek"><button onClick={this.previousWeek}>Previous Week</button></div><h1 className="page-headline-calendar">Habits</h1><div className="changeWeek"><button onClick={this.nextWeek}>Next Week</button></div></div>
                 <div className="goodHabits">
                     <div className="week">
                     {
