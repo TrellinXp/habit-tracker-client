@@ -9,21 +9,6 @@
   pointer-events: none;
 }
 
-.navbar-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 56vw;
-  margin: auto;
-}
-
-.navbar-brand {
-  background-color: royalblue;
-  margin-left: -15vw;
-  margin-top: 2vh;
-  width: 8vw;
-}
-
 .habit-title {
   font-size: 1.6rem;
   line-height: 1.5em;

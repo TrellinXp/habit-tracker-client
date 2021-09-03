@@ -45,8 +45,6 @@ class App extends Component {
         datesObj.push(dateArr[0]);
     }
 
-    console.log("new dates "+JSON.stringify(datesObj)); 
-  
     this.setDates(datesObj);
   }
 

@@ -1,204 +1,189 @@
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    height: 98vh;
-    background-color: palegreen;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
-  .signup {
-    margin-top: 3vh;
-    font-size: 16px;
-    width: 95%;
-    margin-left: 1vw;
-    text-align: left;
-    margin-bottom: 1vh;
-  }
-  
-  html {
-    position: relative;
-    min-height: 90%;
-  }
-  
-  .footer {
-    z-index: 2;
-    position: absolute;
-    bottom: 30px;
-    width: 100%;
-    height: 80px;
-    color: white !important;
-  }
-  
-  .footer a {
-    color: white;
-  }
-  
-  .card-login .form {
-    min-height: 240px !important;
-    max-height: 150px;
-  }
-  
-  .page-header {
-    height: 85.1vh !important;
-  }
-  
-  .signup-btn {
-    background-color: white;
-    color: #0554ff;
-    border: none;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  
-  .login-background {
-    background-image: url('./bg7.jpg');
-    background-size: cover; 
-    background-position: top center;
-  }
-  
-  .login-button {
-    margin-top: 10%;
-  }
-  
-  .username {
-    margin-left: 1vw;
-    font-weight: bold;
-    font-size: 20px;
-    width: 8vw;
-    justify-content: left;
-    display: flex;
-    color: white;
-  }
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 98vh;
+  background-color: palegreen;
+}
 
-  .form-box {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    margin: auto;
-    margin-top: 4vh;
-    height: 75.4vh;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
 
-  h1 {
-    font-weight: bold !important;
-    font-size: 40px !important;
-    display: inline;
-  }
+.signup {
+  margin-top: 3vh;
+  font-size: 16px;
+  width: 95%;
+  margin-left: 1vw;
+  text-align: left;
+  margin-bottom: 1vh;
+}
 
-  .page-headline {
-    margin-top: 50px;
-  } 
+html {
+  position: relative;
+  min-height: 90%;
+}
 
-  .habit-properties {
-    margin-bottom: 2%;
-    display: flex;
-    width: 38vw;
-  }
+.footer {
+  z-index: 2;
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  height: 80px;
+  color: white !important;
+}
 
-  .habit-properties label {
-    width:10vw;
-    text-align: left;
-    font-size: 26px;
-    color: black;
-    font-weight: bold;
-  }
+.footer a {
+  color: white;
+}
 
-  .habit-properties input {
-    width: 50%;
-    text-align: left;
-    font-size: 26px;
-  }
+.page-header {
+  height: 85.1vh !important;
+}
 
-  .habit-properties textarea {
-    width:50%;
-    text-align: left;
-    font-size: 26px;
-  }
+.signup-btn {
+  background-color: white;
+  color: #0554ff;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+}
 
-  .habbit-checkbox {
-    height: 26px;
-    margin-top: 5px;
-    width: 2vw !important;
-    margin-left: -0.5vw;
-  }
+.login-background {
+  background-image: url('./bg7.jpg');
+  background-size: cover;
+  background-position: top center;
+}
 
-  .habit-button {
-    width: 10vw;
-    margin-top: 2vh;
-  }
+.login-button {
+  margin-top: 10%;
+}
 
-  .detail-button {
-    color: white !important;
-  }
+.form-box {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  margin-top: 4vh;
+  height: 75.4vh;
+}
 
-  .habit-action {
-    background-color: cornflowerblue;
-    color: white !important;
-    border: none !important;
-    width: 10vw !important;
-    height: 3vh;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 1vh;
-    font-weight: bold;
-  }
+h1 {
+  font-weight: bold !important;
+  font-size: 40px !important;
+  display: inline;
+}
 
-  .delete-button {
-    background-color: red;
-  } 
+.page-headline {
+  margin-top: 50px;
+}
 
-  .habit-actions {
-    display: flex;
-    flex-direction: column;
-    width: 10vw;    
-    margin: auto;
-    margin-top: 2vh;
-    font-weight: bold;    
-  }
+.habit-properties {
+  margin-bottom: 2%;
+  display: flex;
+  width: 38vw;
+}
 
-  .habit-details {
-    height: 82vh;
-    background: aliceblue;
-    padding-top: 2vh;
-  }
+.habit-properties label {
+  width: 10vw;
+  text-align: left;
+  font-size: 26px;
+  color: black;
+  font-weight: bold;
+}
 
-  .habit-details p{
-    font-size: 24px;
-  }
+.habit-properties input {
+  width: 50%;
+  text-align: left;
+  font-size: 26px;
+}
 
-  .details-attributes {
-    margin-top: 5vh;
-  }
+.habit-properties textarea {
+  width: 50%;
+  text-align: left;
+  font-size: 26px;
+}
 
-  .create-habit {
-    height: 82vh;
-    background: aliceblue;
-    padding-top: 2vw;
-  }
+.habbit-checkbox {
+  height: 26px;
+  margin-top: 5px;
+  width: 2vw !important;
+  margin-left: -0.5vw;
+}
 
-  .login-container {
-    width: 100vw;
-    height: 70vh;
-    position: fixed;
-  }
+.habit-button {
+  width: 10vw;
+  margin-top: 2vh;
+}
 
-  .error-message {
-    color: red;
-    font-size: 18px;
-    margin-top: 2vh;
-    margin: 1.5vh;
-  }
+.detail-button {
+  color: white !important;
+}
 
-  .card-login {
-    height: 35vh !important;
-    margin-bottom: 0px;
-  }
+.habit-action {
+  background-color: cornflowerblue;
+  color: white !important;
+  border: none !important;
+  width: 10vw !important;
+  height: 3vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1vh;
+  font-weight: bold;
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.habit-actions {
+  display: flex;
+  flex-direction: column;
+  width: 10vw;
+  margin: auto;
+  margin-top: 2vh;
+  font-weight: bold;
+}
+
+.habit-details {
+  height: 82vh;
+  background: aliceblue;
+  padding-top: 2vh;
+}
+
+.habit-details p {
+  font-size: 24px;
+}
+
+.details-attributes {
+  margin-top: 5vh;
+}
+
+.create-habit {
+  height: 82vh;
+  background: aliceblue;
+  padding-top: 2vw;
+}
+
+.login-container {
+  width: 100vw;
+  height: 70vh;
+  position: fixed;
+}
+
+.error-message {
+  color: red;
+  font-size: 18px;
+  margin-top: 2vh;
+  margin: 1.5vh;
+}
+
+.card-login {
+  margin-bottom: 0px;
+}
+
+.card-login form.form {
+  min-height: unset;
+}

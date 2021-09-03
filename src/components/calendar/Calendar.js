@@ -21,13 +21,20 @@ export default class Calendar extends Component {
     }
 
     getAllHabitsForUser = () => {
-        const user = this.props.user._id; 
-        axios.get(process.env.REACT_APP_API_URL+`/habitsForUser/${user}`, { withCredentials: true })
-            .then(responseFromApi => {
-                this.setState({
-                    listOfHabits: responseFromApi.data
+        if(this.props.user) {
+            const user = this.props.user._id; 
+            axios.get(process.env.REACT_APP_API_URL+`/habitsForUser/${user}`, { withCredentials: true })
+                .then(responseFromApi => {
+                    this.setState({
+                        listOfHabits: responseFromApi.data
+                    })
                 })
+            }
+        else {
+            this.setState({
+                listOfHabits: []
             })
+        }
     }
 
     componentDidMount() {
@@ -51,8 +58,6 @@ export default class Calendar extends Component {
         var pastDate = ourDate.getDate() - 7;
         ourDate.setDate(pastDate);
 
-        //Log the date to our web console.
-        console.log(ourDate);
         this.props.getDatesToDisplay(ourDate);
         this.currentStartDate = ourDate;
     }
@@ -65,8 +70,6 @@ export default class Calendar extends Component {
         var pastDate = ourDate.getDate() + 7;
         ourDate.setDate(pastDate);
 
-        //Log the date to our web console.
-        console.log(ourDate);
         this.props.getDatesToDisplay(ourDate);
         this.currentStartDate = ourDate;
     }

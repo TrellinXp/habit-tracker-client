@@ -46,7 +46,6 @@ class EditHabit extends Component {
         axios.put(process.env.REACT_APP_API_URL+`/habits/${this.state.habitsId}`, { title, description, amount, unit, goodHabit, date }, { withCredentials: true })
         .then(() => {
           // Use the passed down api call to render the updated project data
-          console.log("Habbit Edited");
           this.props.history.push('/calendar');
         })
         .catch(error => console.log(error))

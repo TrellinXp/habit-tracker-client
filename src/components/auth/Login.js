@@ -185,33 +185,9 @@ class Login extends Component {
     </div>
     <footer className="footer">
       <div className="container">
-        <nav className="float-left">
-          <ul>
-            <li>
-              <a href="https://www.creative-tim.com/">
-                Creative Tim
-              </a>
-            </li>
-            <li>
-              <a href="https://www.creative-tim.com/presentation">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="https://www.creative-tim.com/blog">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="https://www.creative-tim.com/license">
-                Licenses
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="copyright float-right">
+        <div className="copyright ">
           &copy;
-            {new Date().getFullYear()}, made with <i className="material-icons">favorite</i> by
+            {new Date().getFullYear()}, made with <i className="material-icons">favorite</i>  by &nbsp;
             <a href="https://www.creative-tim.com/" target="_blank" rel="noreferrer">Creative Tim</a> for a better web.
         </div>
       </div>

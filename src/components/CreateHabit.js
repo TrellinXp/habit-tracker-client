@@ -29,7 +29,6 @@ export default class CreateHabit extends Component {
            goodHabit = true;
         }
         const date = this.state.date;
-        console.log(this.props.user)
         const user = this.props.user._id; 
         axios.post(process.env.REACT_APP_API_URL+"/habits/",  { title, description, amount, unit, date, user, goodHabit } )
         .then( () => {

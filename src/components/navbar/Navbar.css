@@ -1,9 +1,7 @@
 .navigation {
     display: flex;
-    height: 2vh;
     margin: 0;
     font-weight: bold;
-    width: 90vw;
 }
   
 .navigation a {
@@ -29,4 +27,28 @@
     height: 8vh;
     box-shadow: none !important;
     background-color: royalblue !important;
+    justify-content: center;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+  
+.navbar-brand {
+    background-color: royalblue;
+    margin-left: -15vw;
+    margin-top: 2vh;
+    width: 8vw;
+}
+
+.username {
+    margin-left: 1vw;
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: left;
+    display: flex;
+    color: white;
 }

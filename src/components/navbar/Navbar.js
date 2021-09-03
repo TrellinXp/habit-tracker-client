@@ -51,11 +51,7 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar">
                 <div className="navbar-container">
-                  <div className="navbar-translate">
-                    <a className="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
-                      Material Kit </a>
-                  </div>
-                  <div className="username">{this.props.userIsLoggedIn ? `Hello ${this.props.userData.username}` : "Please Login"}</div>
+                  {this.props.userIsLoggedIn && <div className="username">Hello {this.props.userData.username}</div>}
                   <ul className="navigation">
                       {this.props.userIsLoggedIn
                           ? this.renderCalendar() : "" }

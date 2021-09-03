@@ -16,7 +16,6 @@ class HabitDetails extends Component {
         axios.get(process.env.REACT_APP_API_URL+`/habits/${params.habitsId}`, { withCredentials: true })
             .then(responseFromApi => {
                 const theHabit = responseFromApi.data;
-                console.log('date:', theHabit.date);
                 this.setState(theHabit);
             })
 
