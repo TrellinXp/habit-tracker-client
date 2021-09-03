@@ -28,7 +28,7 @@
 }
 
 .week-day {
-    width:  13.5%;
+    width: 14.5%;
     height: 70vh;
     border: 2px solid gray;
     margin: 6px;
@@ -102,10 +102,11 @@
 .changeWeeks {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .changeWeek {
-    width: 40vw;
+    margin: 0.6rem 6rem;
 }
 
 .habit-title {

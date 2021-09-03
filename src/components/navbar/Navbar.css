@@ -2,6 +2,13 @@
     display: flex;
     margin: 0;
     font-weight: bold;
+    list-style-type: none;
+}
+
+.navigation li {
+    width: 10vw;
+    font-size: 20px;
+    color: transparent;
 }
   
 .navigation a {
