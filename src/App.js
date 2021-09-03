@@ -15,7 +15,8 @@ class App extends Component {
 
   state = {
     isLoggedIn: false,
-    user: null
+    user: null,
+    dates: []
   }
 
   getTheUser = (userObj, loggedIn) => {
@@ -24,6 +25,41 @@ class App extends Component {
       isLoggedIn: loggedIn
     });
   };
+
+  setDates(datesObj) {
+    this.setState({
+      dates: datesObj
+    });
+  }
+
+  getDatesToDisplay = (startDate) => {
+    let datesObj = [];
+    let nextDate = startDate;
+    let dateArr = nextDate.toISOString().split('T');
+
+    datesObj.push(dateArr[0]);
+    for(let count = 0; count <= 5; count++) {
+        let nextDate = startDate;
+        nextDate.setDate(nextDate.getDate() + 1);
+        let dateArr = nextDate.toISOString().split('T');
+        datesObj.push(dateArr[0]);
+    }
+
+    console.log("new dates "+JSON.stringify(datesObj)); 
+  
+    this.setDates(datesObj);
+  }
+
+  getMonday(date) {
+    let d = new Date(date);
+    var day = d.getDay(),
+        diff = d.getDate() - day + (day === 0 ? -6:1); // adjust when day is sunday
+    return new Date(d.setDate(diff));
+  }
+
+  componentDidMount() {
+    this.getDatesToDisplay(this.getMonday(new Date(Date.now())));    
+  } 
 
   render() {
     return (
@@ -59,7 +95,7 @@ class App extends Component {
           <Route 
             exact
             path="/calendar"
-            render={(props) => <Calendar {...props} user={this.state.user} />}
+            render={(props) => <Calendar {...props} user={this.state.user} dates={this.state.dates} getDatesToDisplay={this.getDatesToDisplay} getMonday={this.getMonday}  />}
           />
 
           <Route
