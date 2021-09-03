@@ -12,6 +12,7 @@ export default class CreateHabit extends Component {
     getDate(){
         let date = new Date(Date.now());
         let dateArr = date.toISOString().split('T');
+        console.log("date "+dateArr[0]);
         this.setState({
             date: dateArr[0] 
         })
