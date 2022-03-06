@@ -32,18 +32,21 @@
   color: white;
 }
 
+.welcome-habit {
+  font-size: 200% !important;
+}
+
 .App-link {
   color: #61dafb;
 }
 
 .page-title {
   margin: 0;
-  padding: 3%;
   height: 7vh !important;
   font-weight: bold;
   color: #0554ff;
   padding-top: 1vh !important;
-  width: 40vw;
+  width: 80vw;
 }
 
 .title-container { 
@@ -57,8 +60,6 @@
 
 .title-icon {
   height: 6vh;
-  margin-left: 10vw;
-  margin-right: 10vw
 }
 
 .footer-container {

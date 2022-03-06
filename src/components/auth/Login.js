@@ -127,7 +127,7 @@ class Login extends Component {
 
   render() {
     return (<div className="login-container">
-    <nav className="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+    <nav className="pagetitle-oneline navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div className="container">
       <div className="collapse navbar-collapse">
       </div>

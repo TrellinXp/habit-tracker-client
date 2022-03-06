@@ -42,6 +42,13 @@ html {
   height: 85.1vh !important;
 }
 
+.pagetitle-oneline {
+  display: inline;
+  background-color: red !important;
+  color: black !important;
+  width: 80vw;
+}
+
 .signup-btn {
   background-color: white;
   color: #0554ff;
